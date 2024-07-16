@@ -24,7 +24,6 @@ const MyProperties: NextPage = ({ initialInput, ...props }: any) => {
 
 	/** APOLLO REQUESTS **/
 
-
 	const [updateProperty] = useMutation(UPDATE_PROPERTY);
 	const {
 		loading: getAgentPropertiesLoading,
@@ -92,7 +91,7 @@ const MyProperties: NextPage = ({ initialInput, ...props }: any) => {
 	}
 
 	if (device === 'mobile') {
-		return <div>NESTAR PROPERTIES MOBILE</div>;
+		return <div>vehicles PROPERTIES MOBILE</div>;
 	} else {
 		return (
 			<div id="my-property-page">

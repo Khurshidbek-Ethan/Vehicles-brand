@@ -66,7 +66,7 @@ const MemberFollowers = (props: MemberFollowsProps) => {
 	};
 
 	if (device === 'mobile') {
-		return <div>NESTAR FOLLOWS MOBILE</div>;
+		return <div>vehicles FOLLOWS MOBILE</div>;
 	} else {
 		return (
 			<div id="member-follows-page">
@@ -170,7 +170,7 @@ const MemberFollowers = (props: MemberFollowsProps) => {
 								shape="circular"
 								color="primary"
 							/>
-						</Stack>      
+						</Stack>
 						<Stack className="total-result">
 							<Typography>{total} followers</Typography>
 						</Stack>

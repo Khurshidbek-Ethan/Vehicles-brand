@@ -20,18 +20,17 @@ const RecentlyVisited: NextPage = () => {
 		loading: getVisitedLoading,
 		data: getVisitedData,
 		error: getVisitedError,
-		refetch:getVisitedRefetch,
+		refetch: getVisitedRefetch,
 	} = useQuery(GET_VISITED, {
 		fetchPolicy: 'network-only',
 		variables: {
-			input:searchVisited,
+			input: searchVisited,
 		},
 		onCompleted(data: T) {
 			setRecentlyVisited(data.getVisited?.list);
 			setTotal(data.getVisited?.metaCounter?.[0]?.total || 0);
-		}
-	})
-
+		},
+	});
 
 	/** HANDLERS **/
 	const paginationHandler = (e: T, value: number) => {
@@ -39,7 +38,7 @@ const RecentlyVisited: NextPage = () => {
 	};
 
 	if (device === 'mobile') {
-		return <div>NESTAR MY FAVORITES MOBILE</div>;
+		return <div>vehicles MY FAVORITES MOBILE</div>;
 	} else {
 		return (
 			<div id="my-favorites-page">
