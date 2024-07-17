@@ -24,7 +24,14 @@ export enum PropertyLocation {
 	DAEJON = 'DAEJON',
 	JEJU = 'JEJU',
 }
-
+export enum PropertyBrand {
+	HYUNDAI = 'HYUNDAI',
+	KIA = 'KIA',
+	GENESIS = 'GENESIS',
+	BMW = 'BMW',
+	MERCEDES = 'MERCEDES',
+	AUDI = 'AUDI',
+}
 export enum PropertyColor {
 	WHITE = 'WHITE',
 	BLACK = 'BLACK',
@@ -34,13 +41,4 @@ export enum PropertyColor {
 	SILVER = 'SILVER',
 	BROWN = 'BROWN',
 	ORANGE = 'ORANGE',
-}
-
-export enum PropertyBrand {
-	HYUNDAI = 'HYUNDAI',
-	KIA = 'KIA',
-	GENESIS = 'GENESIS',
-	BMW = 'BMW',
-	MERCEDES = 'MERCEDES',
-	AUDI = 'AUDI',
 }

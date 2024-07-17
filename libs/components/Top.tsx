@@ -166,7 +166,7 @@ const Top = () => {
 					<Stack className={'container'}>
 						<Box component={'div'} className={'logo-box'}>
 							<Link href={'/'}>
-								<img src="/img/logo/logoWhite.svg" alt="" />
+								<img src="/img/logo/burg.jpg" alt="" />
 							</Link>
 						</Box>
 						<Box component={'div'} className={'router-box'}>
@@ -235,7 +235,7 @@ const Top = () => {
 									disableRipple
 									className="btn-lang"
 									onClick={langClick}
-									endIcon={<CaretDown size={14} color="#616161" weight="fill" />}
+									endIcon={<CaretDown size={25} color="#616161" weight="fill" />}
 								>
 									<Box component={'div'} className={'flag'}>
 										{lang !== null ? (
