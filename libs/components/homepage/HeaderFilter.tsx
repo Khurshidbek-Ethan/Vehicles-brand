@@ -215,10 +215,10 @@ const HeaderFilter = (props: HeaderFilterProps) => {
 
 
 
-	// const resetFilterHandler = () => {
-	// 	setSearchFilter(initialInput);
+	const resetFilterHandler = () => {
+		setSearchFilter(initialInput);
 
-	// };
+	};
 
 	const pushSearchHandler = async () => {
 		try {
@@ -311,12 +311,24 @@ const HeaderFilter = (props: HeaderFilterProps) => {
 						})}
 					</div>
 
-					<div className={`filter-rooms ${openRooms ? 'on' : ''}`} ref={roomsRef}>
-						{[1, 2, 3, 4, 5].map((room: number) => {
+					<div className={`filter-brand ${openBrand ? 'on' : ''}`} ref={brandRef}>
+						{propertyBrand.map((brand: string) => {
 							return (
-								<span onClick={() => propertyRoomSelectHandler(room)} key={room}>
-									{room} room{room > 1 ? 's' : ''}
-								</span>
+								<div onClick={() => propertyLocationSelectHandler(location)} key={brand}>
+									<img src={`img/banner/brand/${brand}.webp`} alt="" />
+									<span>{brand}</span>
+								</div>
+							);
+						})}
+					</div>
+
+					<div className={`filter-color ${openColor ? 'on' : ''}`} ref={colorRef}>
+						{propertyColor.map((color: string) => {
+							return (
+								<div onClick={() => propertyLocationSelectHandler(color)} key={color}>
+									<img src={`img/banner/color/${location}.webp`} alt="" />
+									<span>{color}</span>
+								</div>
 							);
 						})}
 					</div>
@@ -336,7 +348,7 @@ const HeaderFilter = (props: HeaderFilterProps) => {
 								<CloseIcon />
 							</div>
 							<div className={'top'}>
-								<span>Find your home</span>
+								<span>Find your CVehicles</span>
 								<div className={'search-input-box'}>
 									<img src="/img/icons/search.svg" alt="" />
 									<input

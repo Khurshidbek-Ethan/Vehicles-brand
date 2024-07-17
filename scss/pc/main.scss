@@ -363,6 +363,106 @@ body::-webkit-scrollbar {
 						}
 					}
 				}
+				.filter-brand {
+					position: absolute;
+					padding: 40px 60px;
+					width: 1094px;
+					min-height: 120px;
+					height: auto;
+					top: 96px;
+					right: 0px;
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+					gap: 40px;
+					visibility: hidden;
+					border-radius: 12px;
+					background: #ffffff;
+					box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+					box-sizing: border-box;
+					z-index: 2;
+					&.on {
+						visibility: visible;
+						transition: 0.2s ease-out;
+						background: #fffdfd;
+					}
+					div {
+						width: 295px;
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						img {
+							width: 122px;
+							height: 85px;
+							border-radius: 15px;
+							cursor: pointer;
+						}
+						span {
+							margin-left: 22px;
+							color: #181a20;
+							font-family: $font;
+							font-size: 20px;
+							font-style: normal;
+							font-weight: 400;
+							line-height: 26px;
+							cursor: pointer;
+							text-transform: capitalize;
+						}
+						label {
+							line-height: 13px;
+						}
+					}
+				}
+				.filter-color {
+					position: absolute;
+					padding: 40px 60px;
+					width: 1094px;
+					min-height: 120px;
+					height: auto;
+					top: 96px;
+					right: 0px;
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+					gap: 40px;
+					visibility: hidden;
+					border-radius: 12px;
+					background: #ffffff;
+					box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+					box-sizing: border-box;
+					z-index: 2;
+					&.on {
+						visibility: visible;
+						transition: 0.2s ease-out;
+						background: #fffdfd;
+					}
+					div {
+						width: 295px;
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						img {
+							width: 122px;
+							height: 85px;
+							border-radius: 15px;
+							cursor: pointer;
+						}
+						span {
+							margin-left: 22px;
+							color: #181a20;
+							font-family: $font;
+							font-size: 20px;
+							font-style: normal;
+							font-weight: 400;
+							line-height: 26px;
+							cursor: pointer;
+							text-transform: capitalize;
+						}
+						label {
+							line-height: 13px;
+						}
+					}
+				}
 				
 			}
 		}
