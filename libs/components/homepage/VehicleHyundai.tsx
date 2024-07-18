@@ -8,14 +8,13 @@ import { Autoplay, Navigation, Pagination } from 'swiper';
 import { Property } from '../../types/property/property';
 import { PropertiesInquiry } from '../../types/property/property.input';
 import { useMutation, useQuery } from '@apollo/client';
-import { GET_PROPERTIES, GET_PROPERTY } from '../../../apollo/user/query';
+import { GET_PROPERTIES } from '../../../apollo/user/query';
 import { T } from '../../types/common';
 import { LIKE_TARGET_PROPERTY } from '../../../apollo/user/mutation';
 import { sweetMixinErrorAlert, sweetTopSmallSuccessAlert } from '../../sweetAlert';
 import { Message } from '../../enums/common.enum';
-import { PropertyBrand } from '../../enums/property.enum';
 import VehicleHyundaiCard from './VehicleHyundaiCard';
-import VehicleHyudaiCard from './VehicleHyundaiCard';
+import { PropertyBrand } from '../../enums/property.enum';
 
 interface TrendPropertiesProps {
 	initialInput: PropertiesInquiry;
@@ -70,7 +69,7 @@ const VehicleHyundai = (props: TrendPropertiesProps) => {
 			<Stack className={'trend-properties'}>
 				<Stack className={'container'}>
 					<Stack className={'info-box'}>
-						<span>HYUNDAI</span>
+						<span>HYUNDAI LINE</span>
 					</Stack>
 					<Stack className={'card-box'}>
 						{trendProperties.length === 0 ? (
@@ -88,7 +87,7 @@ const VehicleHyundai = (props: TrendPropertiesProps) => {
 								{trendProperties.map((property: Property) => {
 									return (
 										<SwiperSlide key={property._id} className={'trend-property-slide'}>
-											<VehicleHyudaiCard property={property} likePropertyHandler={likePropertyHandler} />
+											<VehicleHyundaiCard property={property} likePropertyHandler={likePropertyHandler} />
 										</SwiperSlide>
 									);
 								})}
@@ -104,9 +103,10 @@ const VehicleHyundai = (props: TrendPropertiesProps) => {
 				<Stack className={'container'}>
 					<Stack className={'info-box'}>
 						<Box component={'div'} className={'left'}>
-							<span>HYUNDAI LINE</span>
+							<span>NYUNDAI LINE</span>
 							<p>Trend is based on likes</p>
 						</Box>
+						{/*  =============*/}
 						<Box component={'div'} className={'right'}>
 							<div className={'pagination-box'}>
 								<WestIcon className={'swiper-trend-prev'} />
@@ -114,6 +114,7 @@ const VehicleHyundai = (props: TrendPropertiesProps) => {
 								<EastIcon className={'swiper-trend-next'} />
 							</div>
 						</Box>
+						{/* ------------ */}
 					</Stack>
 					<Stack className={'card-box'}>
 						{trendProperties.length === 0 ? (
@@ -137,7 +138,7 @@ const VehicleHyundai = (props: TrendPropertiesProps) => {
 								{trendProperties.map((property: Property) => {
 									return (
 										<SwiperSlide key={property._id} className={'trend-property-slide'}>
-											<VehicleHyudaiCard property={property} likePropertyHandler={likePropertyHandler} />
+											<VehicleHyundaiCard property={property} likePropertyHandler={likePropertyHandler} />
 										</SwiperSlide>
 									);
 								})}

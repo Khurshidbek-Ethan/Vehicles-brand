@@ -45,24 +45,21 @@ const VehicleGenesisCard = (props: TrendPropertyCardProps) => {
 					<p className={'desc'}>{property.propertyDesc ?? 'no description'}</p>
 					<div className={'options'}>
 						<div>
-							<img src="/img/icons/bed.svg" alt="" />
+							<img src="/img/icons/car.png" alt="" />
 							<span>{property.propertyBrand} </span>
 						</div>
 						<div>
-							<img src="/img/icons/room.svg" alt="" />
-							<span>{property.propertyColor} COLOR</span>
+							<img src="/img/icons/colorcar.png" alt="" />
+							<span>{property.propertyColor} Color </span>
 						</div>
 						<div>
-							<img src="/img/icons/expand.svg" alt="" />
+							<img src="/img/icons/colcar.png" alt="" />
 							<span>{property.propertyType} </span>
 						</div>
 					</div>
 					<Divider sx={{ mt: '15px', mb: '17px' }} />
 					<div className={'bott'}>
-						<p>
-							{property.propertyRent ? 'Rent' : ''} {property.propertyRent && property.propertyBarter && '/'}{' '}
-							{property.propertyBarter ? 'Barter' : ''}
-						</p>
+					
 						<div className="view-like-box">
 							<IconButton color={'default'}>
 								<RemoveRedEyeIcon />
@@ -102,24 +99,21 @@ const VehicleGenesisCard = (props: TrendPropertyCardProps) => {
 						</div>
 						<div>
 							<img src="/img/icons/colorcar.png" alt="" />
-							<span>{property.propertyColor} COLOR</span>
+							<span>{property.propertyColor} Color</span>
 						</div>
 						<div>
-							<img src="/img/icons/suv.jpeg" alt="" />
+							<img src="/img/icons/colcar.png" alt="" />
 							<span>{property.propertyType} </span>
 						</div>
 					</div>
 					<Divider sx={{ mt: '15px', mb: '17px' }} />
 					<div className={'bott'}>
 						<div>${property.propertyPrice}</div>
-
 						<div className="view-like-box">
 							<IconButton color={'default'}>
 								<RemoveRedEyeIcon />
 							</IconButton>
-
 							<Typography className="view-cnt">{property?.propertyViews}</Typography>
-
 							<IconButton color={'default'} onClick={() => likePropertyHandler(user, property?._id)}>
 								{property?.meLiked && property?.meLiked[0]?.myFavorite ? (
 									<FavoriteIcon style={{ color: 'red' }} />

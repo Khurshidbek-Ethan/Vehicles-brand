@@ -15,7 +15,7 @@ interface TrendPropertyCardProps {
 	likePropertyHandler: any;
 }
 
-const VehicleHyudaiCard = (props: TrendPropertyCardProps) => {
+const VehicleHyundaiCard = (props: TrendPropertyCardProps) => {
 	const { property, likePropertyHandler } = props;
 	const device = useDeviceDetect();
 	const router = useRouter();
@@ -50,7 +50,7 @@ const VehicleHyudaiCard = (props: TrendPropertyCardProps) => {
 						</div>
 						<div>
 							<img src="/img/icons/room.svg" alt="" />
-							<span>{property.propertyColor} COLOR</span>
+							<span>{property.propertyColor} </span>
 						</div>
 						<div>
 							<img src="/img/icons/expand.svg" alt="" />
@@ -59,10 +59,7 @@ const VehicleHyudaiCard = (props: TrendPropertyCardProps) => {
 					</div>
 					<Divider sx={{ mt: '15px', mb: '17px' }} />
 					<div className={'bott'}>
-						<p>
-							{property.propertyRent ? 'Rent' : ''} {property.propertyRent && property.propertyBarter && '/'}{' '}
-							{property.propertyBarter ? 'Barter' : ''}
-						</p>
+						
 						<div className="view-like-box">
 							<IconButton color={'default'}>
 								<RemoveRedEyeIcon />
@@ -102,24 +99,21 @@ const VehicleHyudaiCard = (props: TrendPropertyCardProps) => {
 						</div>
 						<div>
 							<img src="/img/icons/colorcar.png" alt="" />
-							<span>{property.propertyColor} COLOR</span>
+							<span>{property.propertyColor} Color</span>
 						</div>
 						<div>
-							<img src="/img/icons/suv.jpeg" alt="" />
+							<img src="/img/icons/colcar.png" alt="" />
 							<span>{property.propertyType} </span>
 						</div>
 					</div>
 					<Divider sx={{ mt: '15px', mb: '17px' }} />
 					<div className={'bott'}>
 						<div>${property.propertyPrice}</div>
-
 						<div className="view-like-box">
 							<IconButton color={'default'}>
 								<RemoveRedEyeIcon />
 							</IconButton>
-
 							<Typography className="view-cnt">{property?.propertyViews}</Typography>
-
 							<IconButton color={'default'} onClick={() => likePropertyHandler(user, property?._id)}>
 								{property?.meLiked && property?.meLiked[0]?.myFavorite ? (
 									<FavoriteIcon style={{ color: 'red' }} />
@@ -136,4 +130,4 @@ const VehicleHyudaiCard = (props: TrendPropertyCardProps) => {
 	}
 };
 
-export default VehicleHyudaiCard;
+export default VehicleHyundaiCard;

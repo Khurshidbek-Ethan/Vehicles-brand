@@ -7,21 +7,20 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
 import { Property } from '../../types/property/property';
 import { PropertiesInquiry } from '../../types/property/property.input';
-import TrendPropertyCard from './VehicleBMWCard';
 import { useMutation, useQuery } from '@apollo/client';
-import { GET_PROPERTIES, GET_PROPERTY } from '../../../apollo/user/query';
+import { GET_PROPERTIES } from '../../../apollo/user/query';
 import { T } from '../../types/common';
 import { LIKE_TARGET_PROPERTY } from '../../../apollo/user/mutation';
 import { sweetMixinErrorAlert, sweetTopSmallSuccessAlert } from '../../sweetAlert';
 import { Message } from '../../enums/common.enum';
-import { PropertyBrand } from '../../enums/property.enum';
 import VehicleKiaCard from './VehicleKiaCard';
+import { PropertyBrand } from '../../enums/property.enum';
 
 interface TrendPropertiesProps {
 	initialInput: PropertiesInquiry;
 }
 
-const VehicleKia = (props: TrendPropertiesProps) => {
+const TrendProperties = (props: TrendPropertiesProps) => {
 	const { initialInput } = props;
 	const device = useDeviceDetect();
 	const [trendProperties, setTrendProperties] = useState<Property[]>([]);
@@ -70,7 +69,7 @@ const VehicleKia = (props: TrendPropertiesProps) => {
 			<Stack className={'trend-properties'}>
 				<Stack className={'container'}>
 					<Stack className={'info-box'}>
-						<span>KIA</span>
+						<span>KIA LINE</span>
 					</Stack>
 					<Stack className={'card-box'}>
 						{trendProperties.length === 0 ? (
@@ -107,6 +106,7 @@ const VehicleKia = (props: TrendPropertiesProps) => {
 							<span>KIA LINE</span>
 							<p>Trend is based on likes</p>
 						</Box>
+						{/*  =============*/}
 						<Box component={'div'} className={'right'}>
 							<div className={'pagination-box'}>
 								<WestIcon className={'swiper-trend-prev'} />
@@ -114,6 +114,7 @@ const VehicleKia = (props: TrendPropertiesProps) => {
 								<EastIcon className={'swiper-trend-next'} />
 							</div>
 						</Box>
+						{/* ------------ */}
 					</Stack>
 					<Stack className={'card-box'}>
 						{trendProperties.length === 0 ? (
@@ -150,7 +151,7 @@ const VehicleKia = (props: TrendPropertiesProps) => {
 	}
 };
 
-VehicleKia.defaultProps = {
+TrendProperties.defaultProps = {
 	initialInput: {
 		page: 1,
 		limit: 8,
@@ -160,4 +161,4 @@ VehicleKia.defaultProps = {
 	},
 };
 
-export default VehicleKia;
+export default TrendProperties;

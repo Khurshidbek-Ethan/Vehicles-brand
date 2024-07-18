@@ -7,20 +7,21 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
 import { Property } from '../../types/property/property';
 import { PropertiesInquiry } from '../../types/property/property.input';
+
 import { useMutation, useQuery } from '@apollo/client';
-import { GET_PROPERTIES, GET_PROPERTY } from '../../../apollo/user/query';
+import { GET_PROPERTIES } from '../../../apollo/user/query';
 import { T } from '../../types/common';
 import { LIKE_TARGET_PROPERTY } from '../../../apollo/user/mutation';
 import { sweetMixinErrorAlert, sweetTopSmallSuccessAlert } from '../../sweetAlert';
 import { Message } from '../../enums/common.enum';
-import { PropertyBrand } from '../../enums/property.enum';
 import VehicleBMWCard from './VehicleBMWCard';
+import { PropertyBrand } from '../../enums/property.enum';
 
 interface TrendPropertiesProps {
 	initialInput: PropertiesInquiry;
 }
 
-const VehicleBMW = (props: TrendPropertiesProps) => {
+const VehicleBmw = (props: TrendPropertiesProps) => {
 	const { initialInput } = props;
 	const device = useDeviceDetect();
 	const [trendProperties, setTrendProperties] = useState<Property[]>([]);
@@ -69,7 +70,7 @@ const VehicleBMW = (props: TrendPropertiesProps) => {
 			<Stack className={'trend-properties'}>
 				<Stack className={'container'}>
 					<Stack className={'info-box'}>
-						<span> BMW LINE</span>
+						<span>BMW LINE</span>
 					</Stack>
 					<Stack className={'card-box'}>
 						{trendProperties.length === 0 ? (
@@ -106,6 +107,7 @@ const VehicleBMW = (props: TrendPropertiesProps) => {
 							<span>BMW LINE</span>
 							<p>Trend is based on likes</p>
 						</Box>
+						{/*  =============*/}
 						<Box component={'div'} className={'right'}>
 							<div className={'pagination-box'}>
 								<WestIcon className={'swiper-trend-prev'} />
@@ -113,6 +115,7 @@ const VehicleBMW = (props: TrendPropertiesProps) => {
 								<EastIcon className={'swiper-trend-next'} />
 							</div>
 						</Box>
+						{/* ------------ */}
 					</Stack>
 					<Stack className={'card-box'}>
 						{trendProperties.length === 0 ? (
@@ -149,7 +152,7 @@ const VehicleBMW = (props: TrendPropertiesProps) => {
 	}
 };
 
-VehicleBMW.defaultProps = {
+VehicleBmw.defaultProps = {
 	initialInput: {
 		page: 1,
 		limit: 8,
@@ -159,4 +162,4 @@ VehicleBMW.defaultProps = {
 	},
 };
 
-export default VehicleBMW;
+export default VehicleBmw;

@@ -45,24 +45,20 @@ const VehicleMercCard = (props: TrendPropertyCardProps) => {
 					<p className={'desc'}>{property.propertyDesc ?? 'no description'}</p>
 					<div className={'options'}>
 						<div>
-							<img src="/img/icons/bed.svg" alt="" />
+							<img src="/img/icons/car.png" alt="" />
 							<span>{property.propertyBrand} </span>
 						</div>
 						<div>
-							<img src="/img/icons/room.svg" alt="" />
-							<span>{property.propertyColor} COLOR</span>
+							<img src="/img/icons/colorcar.png" alt="" />
+							<span>{property.propertyColor} Color</span>
 						</div>
 						<div>
-							<img src="/img/icons/expand.svg" alt="" />
+							<img src="/img/icons/colcar.png" alt="" />
 							<span>{property.propertyType} </span>
 						</div>
 					</div>
 					<Divider sx={{ mt: '15px', mb: '17px' }} />
 					<div className={'bott'}>
-						<p>
-							{property.propertyRent ? 'Rent' : ''} {property.propertyRent && property.propertyBarter && '/'}{' '}
-							{property.propertyBarter ? 'Barter' : ''}
-						</p>
 						<div className="view-like-box">
 							<IconButton color={'default'}>
 								<RemoveRedEyeIcon />
@@ -89,7 +85,9 @@ const VehicleMercCard = (props: TrendPropertyCardProps) => {
 					className={'card-img'}
 					style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.propertyImages[0]})` }}
 					onClick={() => pushDetailHandler(property._id)}
-				></Box>
+				>
+					<div>${property.propertyPrice}</div>
+				</Box>
 				<Box component={'div'} className={'info'}>
 					<strong className={'title'} onClick={() => pushDetailHandler(property._id)}>
 						{property.propertyTitle}
@@ -97,29 +95,26 @@ const VehicleMercCard = (props: TrendPropertyCardProps) => {
 					<p className={'desc'}>{property.propertyDesc ?? 'no description'}</p>
 					<div className={'options'}>
 						<div>
-							<img src="/img/icons/car.png" alt="" />
-							<span>{property.propertyBrand} </span>
+							<img src="/img/icons/bed.svg" alt="" />
+							<span>{property.propertyBrand} bed</span>
 						</div>
 						<div>
-							<img src="/img/icons/colorcar.png" alt="" />
-							<span>{property.propertyColor} COLOR</span>
+							<img src="/img/icons/room.svg" alt="" />
+							<span>{property.propertyColor} rooms</span>
 						</div>
 						<div>
-							<img src="/img/icons/suv.jpeg" alt="" />
-							<span>{property.propertyType} </span>
+							<img src="/img/icons/expand.svg" alt="" />
+							<span>{property.propertyType} m2</span>
 						</div>
 					</div>
 					<Divider sx={{ mt: '15px', mb: '17px' }} />
 					<div className={'bott'}>
 						<div>${property.propertyPrice}</div>
-
 						<div className="view-like-box">
 							<IconButton color={'default'}>
 								<RemoveRedEyeIcon />
 							</IconButton>
-
 							<Typography className="view-cnt">{property?.propertyViews}</Typography>
-
 							<IconButton color={'default'} onClick={() => likePropertyHandler(user, property?._id)}>
 								{property?.meLiked && property?.meLiked[0]?.myFavorite ? (
 									<FavoriteIcon style={{ color: 'red' }} />
