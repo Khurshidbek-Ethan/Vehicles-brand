@@ -13,7 +13,7 @@ import VehicleGenesis from '../libs/components/homepage/VehicleGenesis';
 import VehicleAudi from '../libs/components/homepage/VehicleAudi';
 import VehicleMerc from '../libs/components/homepage/VehicleMerc';
 import VehicleHyundai from '../libs/components/homepage/VehicleHyundai';
-import TopProperties from '../libs/components/homepage/TopProperties';
+
 
 export const getStaticProps = async ({ locale }: any) => ({
 	props: {
@@ -47,7 +47,7 @@ const Home: NextPage = () => {
 				<VehicleMerc />
 				<VehicleKia />
 				<Advertisement />
-				<TopProperties />
+
 				<TopAgents />
 				<Events />
 				<CommunityBoards />

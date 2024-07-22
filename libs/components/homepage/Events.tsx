@@ -10,30 +10,28 @@ interface EventData {
 }
 const eventsData: EventData[] = [
 	{
-		eventTitle: 'Paradise City Theme Park',
-		city: 'Incheon',
-		description:
-			'Experience magic and wonder in Incheon with a visit to the night-themed indoor theme park Wonderbox at Paradise City!',
-		imageSrc: '/img/events/INCHEON.webp',
+		eventTitle: 'we are about to sign a contract with chevrolet',
+		city: 'TESLA COMPANY',
+		description: '',
+		imageSrc: '/img/events/logo2.png',
 	},
 	{
-		eventTitle: 'Taebaeksan Snow Festival',
-		city: 'Seoul',
-		description: 'If you have the opportunity to travel to South Korea, do not miss the Taebaeksan Snow Festival!',
-		imageSrc: '/img/events/SEOUL.webp',
+		eventTitle: 'We are on the verge of finalizing a contract with this company',
+		city: 'SSANGYONG COMPANY ',
+		description: '',
+		imageSrc: '/img/events/ss.png',
 	},
 	{
-		eventTitle: 'Suseong Lake Event',
-		city: 'Daegu',
-		description: 'The Suseong Lake Festival is a culture and arts festival held alongside Suseongmot Lake!',
-		imageSrc: '/img/events/DAEGU.webp',
+		eventTitle: 'Recently, Chevrolet company will come to make a contract with us',
+		city: 'SHEVROLET COMPANY',
+		description: '',
+		imageSrc: '/img/events/logo3.png',
 	},
 	{
-		eventTitle: 'Sand Festival',
-		city: 'Busan',
-		description:
-			'Haeundae Sand Festival, the nation’s largest eco-friendly exhibition on sand, is held at Haeundae Beach!',
-		imageSrc: '/img/events/BUSAN.webp',
+		eventTitle: 'we will start selling lexus cars on monday',
+		city: 'LEXUS COMPANY',
+		description: '',
+		imageSrc: '/img/events/logo4.png',
 	},
 ];
 
@@ -48,7 +46,7 @@ const EventCard = ({ event }: { event: EventData }) => {
 				className="event-card"
 				style={{
 					backgroundImage: `url(${event?.imageSrc})`,
-					backgroundSize: 'cover',
+					backgroundSize: 'contain',
 					backgroundPosition: 'center',
 					backgroundRepeat: 'no-repeat',
 				}}

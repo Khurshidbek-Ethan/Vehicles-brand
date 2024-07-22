@@ -22,7 +22,7 @@ const Advertisement = () => {
 		);
 	} else {
 		return (
-			<Stack className={'video-frame'}>
+			<Stack className={'video-frame'} marginLeft={'80px'}>
 				<Stack className="first-block">
 					<div className="block1">
 						<video
@@ -31,7 +31,7 @@ const Advertisement = () => {
 							loop
 							playsInline
 							preload="auto"
-							style={{ width: '100%', height: '300px', objectFit: 'cover', paddingLeft: '20px' }}
+							style={{ width: '100%', height: '300px', objectFit: 'cover', paddingLeft: '5px' }}
 						>
 							<source src="/video/ads.mov" type="video/mp4" />
 						</video>
@@ -44,7 +44,7 @@ const Advertisement = () => {
 							loop
 							playsInline
 							preload="auto"
-							style={{ width: '100%', height: '300px', objectFit: 'cover', marginTop: '10px', paddingLeft: '20px' }}
+							style={{ width: '100%', height: '300px', objectFit: 'cover', marginTop: '10px', paddingLeft: '5px' }}
 						>
 							<source src="/video/ads.mov" type="video/mp4" />
 						</video>
@@ -59,10 +59,10 @@ const Advertisement = () => {
 							playsInline
 							preload="auto"
 							style={{
-								width: '100%',
+								width: '1050px',
 								height: '200px',
 								objectFit: 'cover',
-								paddingLeft: '10px',
+								paddingLeft: '15px',
 								paddingRight: '20px',
 							}}
 						>
@@ -77,11 +77,11 @@ const Advertisement = () => {
 							playsInline
 							preload="auto"
 							style={{
-								width: '1200px',
+								width: '1050px',
 								height: '200px',
 								objectFit: 'cover',
 								paddingTop: '10px',
-								paddingLeft: '10px',
+								paddingLeft: '15px',
 								paddingRight: '20px',
 							}}
 						>
@@ -96,11 +96,11 @@ const Advertisement = () => {
 							playsInline
 							preload="auto"
 							style={{
-								width: '1200px',
+								width: '1050px',
 								height: '210px',
 								objectFit: 'cover',
 								paddingTop: '10px',
-								paddingLeft: '10px',
+								paddingLeft: '15px',
 								paddingRight: '20px',
 							}}
 						>
