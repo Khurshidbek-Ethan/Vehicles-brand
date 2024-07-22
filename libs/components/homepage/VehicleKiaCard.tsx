@@ -80,7 +80,7 @@ const VehicleKiaCard = (props: TrendPropertyCardProps) => {
 		);
 	} else {
 		return (
-			<Stack className="trend-card-box" key={property._id}>
+			<Stack className="kia-card-box" key={property._id}>
 				<Box
 					component={'div'}
 					className={'card-img'}
@@ -99,7 +99,7 @@ const VehicleKiaCard = (props: TrendPropertyCardProps) => {
 						</div>
 						<div>
 							<img src="/img/icons/colorcar.png" alt="" />
-							<span>{property.propertyColor} Color</span>
+							<span>{property.propertyColor} </span>
 						</div>
 						<div>
 							<img src="/img/icons/colcar.png" alt="" />

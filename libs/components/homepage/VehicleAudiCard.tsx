@@ -80,7 +80,7 @@ const VehicleAudiCard = (props: TrendPropertyCardProps) => {
 		);
 	} else {
 		return (
-			<Stack className="trend-card-box" key={property._id}>
+			<Stack className="audi-card-box" key={property._id}>
 				<Box
 					component={'div'}
 					className={'card-img'}

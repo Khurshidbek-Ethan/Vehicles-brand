@@ -99,7 +99,7 @@ const VehicleHyundai = (props: TrendPropertiesProps) => {
 		);
 	} else {
 		return (
-			<Stack className={'trend-properties'}>
+			<Stack className={'NYUNDAI-properties'}>
 				<Stack className={'container'}>
 					<Stack className={'info-box'}>
 						<Box component={'div'} className={'left'}>

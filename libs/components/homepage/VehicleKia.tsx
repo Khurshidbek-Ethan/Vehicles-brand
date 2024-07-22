@@ -50,9 +50,7 @@ const TrendProperties = (props: TrendPropertiesProps) => {
 		try {
 			if (!id) return;
 			if (!user._id) throw new Error(Message.NOT_AUTHENTICATED);
-			//execute likeTargetproperty  Mutationni ishga tushirish
 			await likeTargetproperty({ variables: { input: id } });
-			//execute getPropertiesRefetch
 			await getPropertiesRefetch({ input: initialInput });
 			await sweetTopSmallSuccessAlert('success', 800);
 		} catch (err: any) {
@@ -99,7 +97,7 @@ const TrendProperties = (props: TrendPropertiesProps) => {
 		);
 	} else {
 		return (
-			<Stack className={'trend-properties'}>
+			<Stack className={'kia-properties'}>
 				<Stack className={'container'}>
 					<Stack className={'info-box'}>
 						<Box component={'div'} className={'left'}>

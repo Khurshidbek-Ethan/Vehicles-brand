@@ -241,22 +241,7 @@ const HeaderFilter = (props: HeaderFilterProps) => {
 				
 					<Stack className={'search-box'}>
 						<Stack className={'search-box-other'}>
-							<div className={'top'}>
-								{/* <span>Find your Vehicles</span> */}
-								<div className={'search-input-box'}>
-									<input
-										value={searchFilter?.search?.text ?? ''}
-										type="text"
-										placeholder={'You can find Vehicles'}
-										onChange={(e: any) => {
-											setSearchFilter({
-												...searchFilter,
-												search: { ...searchFilter.search, text: e.target.value },
-											});
-										}}
-									/>
-								</div>
-							</div>
+							
 
 							<Box className={'search-btn'} onClick={pushSearchHandler}>
 								<img src="/img/icons/search_white.svg" alt="" />
