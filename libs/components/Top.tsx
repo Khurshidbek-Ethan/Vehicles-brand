@@ -166,7 +166,7 @@ const Top = () => {
 					<Stack className={'container'}>
 						<Box component={'div'} className={'logo-box'}>
 							<Link href={'/'}>
-								<img src="/img/logo/burg.jpg" alt="" />
+								<img src="/img/logo/burg1.svg" alt="" />
 							</Link>
 						</Box>
 						<Box component={'div'} className={'router-box'}>

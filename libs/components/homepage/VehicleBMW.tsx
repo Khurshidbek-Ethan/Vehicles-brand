@@ -156,8 +156,8 @@ VehicleBmw.defaultProps = {
 	initialInput: {
 		page: 1,
 		limit: 8,
-		sort: 'propertyLikes',
-		direction: 'DESC',
+		sort: 'createdAt',
+		direction: 'ASC',
 		search: {},
 	},
 };

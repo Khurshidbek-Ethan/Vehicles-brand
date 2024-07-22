@@ -155,7 +155,7 @@ VehicleHyundai.defaultProps = {
 	initialInput: {
 		page: 1,
 		limit: 8,
-		sort: 'propertyLikes',
+		sort: 'createdAt',
 		direction: 'DESC',
 		search: {},
 	},
