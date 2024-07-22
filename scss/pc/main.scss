@@ -735,11 +735,13 @@ body::-webkit-scrollbar {
 					flex-direction: column;
 					justify-content: space-between;
 					.footer-box {
+
 						display: flex;
 						flex-direction: column;
 						.logo {
+						border-radius: 50%;
 							width: 128px;
-							height: 52px;
+							height: 100px;
 							cursor: pointer;
 						}
 						span {
@@ -795,13 +797,13 @@ body::-webkit-scrollbar {
 							align-items: center;
 							box-sizing: border-box;
 							border-radius: 12px;
-							background: #212329;
+							background: #b4b5b8;
 							input {
 								margin-right: 10px;
 								width: 85%;
 								border: none;
 								outline: none;
-								color: #fff;
+								color: #fcfcfc;
 								font-family: $font;
 								font-size: 14px;
 								font-style: normal;
@@ -810,7 +812,7 @@ body::-webkit-scrollbar {
 								background: none;
 							}
 							span {
-								color: #fff;
+								color: #111010;
 								font-family: $font;
 								font-size: 15px;
 								font-style: normal;

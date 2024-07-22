@@ -18,16 +18,16 @@ const Footer = () => {
 							<img src="/img/logo/logoWhite.svg" alt="" className={'logo'} />
 						</Box>
 						<Box component={'div'} className={'footer-box'}>
-							<span>total free customer care</span>
-							<p>+82 10 4867 2909</p>
+							<span>Absolutely free customer service</span>
+							<p>+82 10 2973 6778</p>
 						</Box>
 						<Box component={'div'} className={'footer-box'}>
 							<span>nee live</span>
-							<p>+82 10 4867 2909</p>
+							<p>+82 10 8243 7101</p>
 							<span>Support?</span>
 						</Box>
 						<Box component={'div'} className={'footer-box'}>
-							<p>follow us on social media</p>
+							<p>Connect with us on social media</p>
 							<div className={'media-box'}>
 								<FacebookOutlinedIcon />
 								<TelegramIcon />
@@ -39,9 +39,9 @@ const Footer = () => {
 					<Stack className={'right'}>
 						<Box component={'div'} className={'bottom'}>
 							<div>
-								<strong>Popular Search</strong>
-								<span>Property for Rent</span>
-								<span>Property Low to hide</span>
+								<strong>OUR BRAND</strong>
+								<span>HYUNDAI</span>
+								<span></span>
 							</div>
 							<div>
 								<strong>Quick Links</strong>
@@ -73,15 +73,15 @@ const Footer = () => {
 				<Stack className={'main'}>
 					<Stack className={'left'}>
 						<Box component={'div'} className={'footer-box'}>
-							<img src="/img/logo/logoWhite.svg" alt="" className={'logo'} />
+							<img src="/img/logo/burg.jpg" alt="" className={'logo'} />
 						</Box>
 						<Box component={'div'} className={'footer-box'}>
-							<span>total free customer care</span>
-							<p>+82 10 4867 2909</p>
+							<span>Absolutely free customer service</span>
+							<p>+82 10 2973 6778</p>
 						</Box>
 						<Box component={'div'} className={'footer-box'}>
 							<span>nee live</span>
-							<p>+82 10 4867 2909</p>
+							<p>+82 10 8243 7101</p>
 							<span>Support?</span>
 						</Box>
 						<Box component={'div'} className={'footer-box'}>
@@ -104,9 +104,13 @@ const Footer = () => {
 						</Box>
 						<Box component={'div'} className={'bottom'}>
 							<div>
-								<strong>Popular Search</strong>
-								<span>Property for Rent</span>
-								<span>Property Low to hide</span>
+								<strong>OUR BRAND</strong>
+								<span>GENESIS</span>
+								<span>HYUNDAI</span>
+								<span>BMW</span>
+								<span>MERC</span>
+								<span>AUDI</span>
+								<span>KIA</span>
 							</div>
 							<div>
 								<strong>Quick Links</strong>
