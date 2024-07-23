@@ -160,8 +160,8 @@
 					height: auto;
 					gap: 10px;
 					.main-image {
-						width: 100%;
-						height: 600px;
+						width: 1180px;
+						height: 580px;
 						img {
 							width: 100%;
 							height: 100%;
@@ -175,7 +175,7 @@
 						flex-direction: row;
 						gap: 10px;
 						.sub-img-box {
-							width: 120px;
+							width: 300px;
 							height: 120px;
 							cursor: pointer;
 							img {
@@ -283,7 +283,7 @@
 								line-height: normal;
 							}
 							.info-box {
-								width: 100%;
+								width: 1300px;
 								height: auto;
 								flex-direction: row;
 								gap: 230px;
@@ -565,12 +565,13 @@
 					}
 				}
 				.right-config {
-					width: 318px;
+					margin-top: 110px;
+					width: 1300px;
 					height: fit-content;
 					padding: 30px 25px;
-					gap: 20px;
+					gap: 30px;
 					border-radius: 12px;
-					border: 1px solid rgba(196, 196, 196, 0.79);
+					border: 1px solid rgb(15, 63, 223);
 					background: #fff;
 					box-shadow: 0px 1px 4px 0px rgba(24, 26, 32, 0.07);
 					.info-box {
@@ -589,11 +590,11 @@
 						.image-info {
 							width: 100%;
 							flex-direction: row;
-							gap: 18px;
+							gap: 38px;
 							img {
-								width: 95px;
-								height: 95px;
-								border-radius: 50%;
+								width: 140px;
+								height: 140px;
+								border-radius: 20%;
 								object-fit: cover;
 							}
 							.name-phone-listings {
@@ -644,7 +645,7 @@
 							height: 55px;
 							padding: 15px;
 							border-radius: 8px;
-							border: 1px solid #ddd;
+							border: 1px solid #0b66ef;
 							background: #fff;
 							outline: none;
 							&::placeholder {
@@ -664,7 +665,7 @@
 							height: 120px;
 							padding: 20px;
 							border-radius: 8px;
-							border: 1px solid #ddd;
+							border: 1px solid #0740ea;
 							font-family: $font;
 							font-size: 14px;
 							font-style: normal;
@@ -683,6 +684,7 @@
 							}
 						}
 						.send-message {
+							border: 1px solid rgb(15, 63, 223);
 							display: flex;
 							width: 100%;
 							padding: 16px 30px;
@@ -690,9 +692,9 @@
 							align-items: center;
 							gap: 10px;
 							border-radius: 12px;
-							background: #eb6753;
+							background: #b2afa8;
 							.title {
-								color: #fff;
+								color: #262424;
 								font-family: $font;
 								font-size: 15px;
 								font-style: normal;
@@ -711,7 +713,7 @@
 					width: 100%;
 					height: auto;
 					flex-direction: row;
-					justify-content: space-between;
+					justify-content: space-around;
 					align-items: flex-end;
 					.title-box {
 						width: 30%;
@@ -726,7 +728,7 @@
 							text-transform: capitalize;
 						}
 						.sub-title {
-							color: #181a20;
+							color: #24211a;
 							font-family: $font;
 							font-size: 14px;
 							font-style: normal;
@@ -746,7 +748,7 @@
 					.similar-homes-swiper {
 						width: 100%;
 						.similar-homes-slide {
-							width: 411px;
+							width: 395px;
 						}
 					}
 				}
