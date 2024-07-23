@@ -19,9 +19,9 @@
 				align-items: center;
 				img {
 					margin-right: 32px;
-					width: 135px;
-					height: 135px;
-					border-radius: 50%;
+					width: 235px;
+					height: 235px;
+					border-radius: 20%;
 					cursor: pointer;
 					object-fit: cover;
 				}
@@ -156,11 +156,17 @@
 				padding: 58px 19px;
 				width: 95%;
 				height: auto;
+				border: 1px solid #0f65d6;
 				border-radius: 24px;
 				background: #f6f6f6;
 				.main-intro {
+					border-radius: 24px;
+					background: #ffffff;
 					display: flex;
 					flex-direction: column;
+					padding: 28px 9px;
+					width: 20%;
+					height: auto;
 					span {
 						color: #181a20;
 						font-family: $font;
@@ -300,7 +306,7 @@
 						margin-top: 8px;
 						padding: 20px;
 						border-radius: 8px;
-						border: 1px solid #ddd;
+						border: 1px solid #e0841b;
 						color: #717171;
 						font-family: $font;
 						font-size: 14px;
@@ -313,6 +319,7 @@
 						display: flex;
 						justify-content: flex-end;
 						button:disabled {
+							border: 1px solid #0f65d6;
 							background: #dfdfdf;
 						}
 						.submit-review {
