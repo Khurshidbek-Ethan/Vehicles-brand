@@ -132,7 +132,6 @@ const Filter = (props: FilterType) => {
 				.then();
 		}
 
-		
 		if (searchFilter?.search?.locationList) setShowMore(true);
 	}, [searchFilter]);
 
@@ -396,6 +395,7 @@ const Filter = (props: FilterType) => {
 			<Stack className={'filter-main'}>
 				<Stack className={'find-your-home'} mb={'40px'}>
 					<Typography className={'title-main'}>Your rides</Typography>
+
 					<Stack className={'input-box'}>
 						<OutlinedInput
 							value={searchText}
@@ -435,11 +435,11 @@ const Filter = (props: FilterType) => {
 				</Stack>
 				<Stack className={'find-your-home'} mb={'30px'}>
 					<p className={'title'} style={{ textShadow: '0px 3px 4px #b9b9b9' }}>
-						Area
+						Location
 					</p>
 					<Stack
 						className={`property-location`}
-						style={{ height: showMore ? '253px' : '115px' }}
+						style={{ height: showMore ? '253px' : '115px', }}
 						onMouseEnter={() => setShowMore(true)}
 						onMouseLeave={() => {
 							if (!searchFilter?.search?.locationList) {
@@ -468,7 +468,7 @@ const Filter = (props: FilterType) => {
 					</Stack>
 				</Stack>
 				<Stack className={'find-your-home'} mb={'30px'}>
-					<Typography className={'title'}>Vehicles Type</Typography>
+					<Typography className={'title'}> Type</Typography>
 					{propertyType.map((type: string) => (
 						<Stack className={'input-box'} key={type}>
 							<Checkbox
@@ -487,7 +487,7 @@ const Filter = (props: FilterType) => {
 					))}
 				</Stack>
 				<Stack className={'find-your-home'} mb={'30px'}>
-					<Typography className={'title'}>Vehicles Brand</Typography>
+					<Typography className={'title'}>Brand</Typography>
 					{propertyBrand.map((brand: string) => (
 						<Stack className={'input-box'} key={brand}>
 							<Checkbox
@@ -506,7 +506,7 @@ const Filter = (props: FilterType) => {
 					))}
 				</Stack>
 				<Stack className={'find-your-home'} mb={'30px'}>
-					<Typography className={'title'}>Vehicles Color</Typography>
+					<Typography className={'title'}>Color</Typography>
 					{propertyColor.map((color: string) => (
 						<Stack className={'input-box'} key={color}>
 							<Checkbox
@@ -525,7 +525,7 @@ const Filter = (props: FilterType) => {
 					))}
 				</Stack>
 				<Stack className={'find-your-home'}>
-					<Typography className={'title'}>Price Range</Typography>
+					<Typography className={'title'}>Price</Typography>
 					<Stack className="square-year-input">
 						<input
 							type="number"
