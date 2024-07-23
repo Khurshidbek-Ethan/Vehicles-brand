@@ -12,7 +12,7 @@ export interface PropertyInput {
 	propertyImages: string[];
 	propertyDesc?: string;
 	memberId?: string;
-	constructedAt?: Date;
+
 }
 
 interface PISearch {

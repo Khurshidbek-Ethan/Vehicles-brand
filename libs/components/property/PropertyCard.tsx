@@ -1,129 +1,108 @@
 import React from 'react';
-import { Stack, Box, Divider, Typography } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
+import { Stack, Typography, Box } from '@mui/material';
 import useDeviceDetect from '../../hooks/useDeviceDetect';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { Property } from '../../types/property/property';
-import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-import { REACT_APP_API_URL } from '../../config';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
+import { formatterStr } from '../../utils';
+import { REACT_APP_API_URL, topPropertyRank } from '../../config';
 import { useReactiveVar } from '@apollo/client';
 import { userVar } from '../../../apollo/store';
+import IconButton from '@mui/material/IconButton';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 
-interface TrendPropertyCardProps {
+interface PropertyCardType {
 	property: Property;
-	likePropertyHandler: any;
+	likePropertyHandler?: any;
+	myFavorites?: boolean;
+	recentlyVisited?: boolean;
 }
 
-const PropertyCard = (props: TrendPropertyCardProps) => {
-	const { property, likePropertyHandler } = props;
+const PropertyCard = (props: PropertyCardType) => {
+	const { property, likePropertyHandler, myFavorites, recentlyVisited } = props;
 	const device = useDeviceDetect();
-	const router = useRouter();
 	const user = useReactiveVar(userVar);
-
-	/** HANDLERS **/
-	const pushDetailHandler = async (propertyId: string) => {
-		console.log('propertyId:', propertyId);
-		await router.push({ pathname: '/property/detail', query: { id: propertyId } });
-	};
+	const imagePath: string = property?.propertyImages[0]
+		? `${REACT_APP_API_URL}/${property?.propertyImages[0]}`
+		: '/img/banner/header1.svg';
 
 	if (device === 'mobile') {
-		return (
-			<Stack className="trend-card-box" key={property._id}>
-				<Box
-					component={'div'}
-					className={'card-img'}
-					style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.propertyImages[0]})` }}
-					onClick={() => pushDetailHandler(property._id)}
-				>
-					<div>${property.propertyPrice}</div>
-				</Box>
-				<Box component={'div'} className={'info'}>
-					<strong className={'title'} onClick={() => pushDetailHandler(property._id)}>
-						{property.propertyTitle}{' '}
-					</strong>
-					<p className={'desc'}>{property.propertyDesc ?? 'no description'}</p>
-					<div className={'options'}>
-						<div>
-							<img src="/img/icons/car.png" alt="" />
-							<span>{property.propertyBrand} </span>
-						</div>
-						<div>
-							<img src="/img/icons/colorcar.png" alt="" />
-							<span>{property.propertyColor} </span>
-						</div>
-						<div>
-							<img src="/img/icons/colcar.png" alt="" />
-							<span>{property.propertyType} </span>
-						</div>
-					</div>
-					<Divider sx={{ mt: '15px', mb: '17px' }} />
-					<div className={'bott'}>
-						<div className="view-like-box">
-							<IconButton color={'default'}>
-								<RemoveRedEyeIcon />
-							</IconButton>
-							<Typography className="view-cnt">{property?.propertyViews}</Typography>
-							<IconButton color={'default'} onClick={() => likePropertyHandler(user, property?._id)}>
-								{property?.meLiked && property?.meLiked[0]?.myFavorite ? (
-									<FavoriteIcon style={{ color: 'red' }} />
-								) : (
-									<FavoriteIcon />
-								)}
-							</IconButton>
-							<Typography className="view-cnt">{property?.propertyLikes}</Typography>
-						</div>
-					</div>
-				</Box>
-			</Stack>
-		);
+		return <div>PROPERTY CARD</div>;
 	} else {
 		return (
-			<Stack className="prop-card-box" key={property._id}>
-				<Box
-					component={'div'}
-					className={'card-img'}
-					style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.propertyImages[0]})` }}
-					onClick={() => pushDetailHandler(property._id)}
-				></Box>
-				<Box component={'div'} className={'info'}>
-					<strong className={'title'} onClick={() => pushDetailHandler(property._id)}>
-						{property.propertyTitle}
-					</strong>
-					<p className={'desc'}>{property.propertyDesc ?? 'no description'}</p>
-					<div className={'options'}>
-						<div>
-							<img src="/img/icons/car.png" alt="" />
-							<span>{property.propertyBrand} bed</span>
-						</div>
-						<div>
-							<img src="/img/icons/colorcar.png" alt="" />
-							<span>{property.propertyColor} Color</span>
-						</div>
-						<div>
-							<img src="/img/icons/colcar.png" alt="" />
-							<span>{property.propertyType} </span>
-						</div>
-					</div>
-					<Divider sx={{ mt: '15px', mb: '17px' }} />
-					<div className={'bott'}>
-						<div>${property.propertyPrice}</div>
-						<div className="view-like-box">
-							<IconButton color={'default'}>
-								<RemoveRedEyeIcon />
-							</IconButton>
-							<Typography className="view-cnt">{property?.propertyViews}</Typography>
-							<IconButton color={'default'} onClick={() => likePropertyHandler(user, property?._id)}>
-								{property?.meLiked && property?.meLiked[0]?.myFavorite ? (
-									<FavoriteIcon style={{ color: 'red' }} />
-								) : (
-									<FavoriteIcon />
-								)}
-							</IconButton>
-							<Typography className="view-cnt">{property?.propertyLikes}</Typography>
-						</div>
-					</div>
-				</Box>
+			<Stack className="card-config">
+				<Stack className="top">
+					<Link
+						href={{
+							pathname: '/property/detail',
+							query: { id: property?._id },
+						}}
+					>
+						<img src={imagePath} alt="" />
+					</Link>
+					{property && property?.propertyRank > topPropertyRank && (
+						<Box component={'div'} className={'top-badge'}>
+							<img src="/img/icons/electricity.svg" alt="" />
+							<Typography>TOP</Typography>
+						</Box>
+					)}
+					<Box component={'div'} className={'price-box'}>
+						<Typography>${formatterStr(property?.propertyPrice)}</Typography>
+					</Box>
+				</Stack>
+				<Stack className="bottom">
+					<Stack className="name-address">
+						<Stack className="name">
+							<Link
+								href={{
+									pathname: '/property/detail',
+									query: { id: property?._id },
+								}}
+							>
+								<Typography>{property.propertyTitle}</Typography>
+							</Link>
+						</Stack>
+						<Stack className="address">
+							<Typography>
+								{property.propertyAddress}, {property.propertyLocation}
+							</Typography>
+						</Stack>
+					</Stack>
+					<Stack className="options">
+						<Stack className="option">
+							<img src="/img/icons/car.png" alt="" /> <Typography>{property.propertyBrand} </Typography>
+						</Stack>
+						<Stack className="option">
+							<img src="/img/icons/colorcar.png" alt="" /> <Typography>{property.propertyColor} </Typography>
+						</Stack>
+						<Stack className="option">
+							<img src="/img/icons/colcar.png" alt="" /> <Typography>{property.propertyType} </Typography>
+						</Stack>
+					</Stack>
+					<Stack className="divider"></Stack>
+					<Stack className="type-buttons">
+						
+						{!recentlyVisited && (
+							<Stack className="buttons">
+								<IconButton color={'default'}>
+									<RemoveRedEyeIcon />
+								</IconButton>
+								<Typography className="view-cnt">{property?.propertyViews}</Typography>
+								<IconButton color={'default'} onClick={() => likePropertyHandler(user, property?._id)}>
+									{myFavorites ? (
+										<FavoriteIcon color="primary" />
+									) : property?.meLiked && property?.meLiked[0]?.myFavorite ? (
+										<FavoriteIcon color="primary" />
+									) : (
+										<FavoriteBorderIcon />
+									)}
+								</IconButton>
+								<Typography className="view-cnt">{property?.propertyLikes}</Typography>
+							</Stack>
+						)}
+					</Stack>
+				</Stack>
 			</Stack>
 		);
 	}

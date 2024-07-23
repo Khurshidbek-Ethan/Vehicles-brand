@@ -109,7 +109,6 @@ export const GET_PROPERTY = gql`
 			memberId
 			soldAt
 			deletedAt
-			constructedAt
 			createdAt
 			updatedAt
 			meLiked {
@@ -268,7 +267,6 @@ export const GET_FAVORITES = gql`
 				memberId
 				soldAt
 				deletedAt
-				constructedAt
 				createdAt
 				updatedAt
 				memberData {

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { NextPage } from 'next';
 import { Pagination, Stack, Typography } from '@mui/material';
 import useDeviceDetect from '../../hooks/useDeviceDetect';
-import { PropertyCard } from './PropertyCard';
 import { useMutation, useQuery, useReactiveVar } from '@apollo/client';
 import { Property } from '../../types/property/property';
 import { AgentPropertiesInquiry } from '../../types/property/property.input';
@@ -13,6 +12,8 @@ import { useRouter } from 'next/router';
 import { UPDATE_PROPERTY } from '../../../apollo/user/mutation';
 import { GET_AGENT_PROPERTIES } from '../../../apollo/user/query';
 import { sweetConfirmAlert, sweetErrorHandling } from '../../sweetAlert';
+import { PropertyCard } from './PropertyCard';
+
 
 const MyProperties: NextPage = ({ initialInput, ...props }: any) => {
 	const device = useDeviceDetect();
