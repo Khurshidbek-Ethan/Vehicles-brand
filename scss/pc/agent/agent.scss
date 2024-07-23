@@ -23,9 +23,9 @@
 						width: 333px;
 						height: 50px;
 						border-radius: 40px;
-						border: 1px solid #ddd;
-						background: #fff;
-						color: #181a20;
+						border: 1px solid #0f65d6;
+						background: #cecccc;
+						color: #d5d5e2;
 						font-family: $font;
 						font-size: 14px;
 						font-style: normal;
@@ -38,6 +38,17 @@
 					display: flex;
 					flex-direction: row;
 					align-items: center;
+					font-family: $font;
+					font-size: 14px;
+					margin-left: 20px;
+					font-style: normal;
+					font-weight: bold;
+					line-height: 26px;
+					border: 1px solid #0f65d6;
+					background: #c4c1c1;
+					border-radius: 12px;
+					margin-left: 12px;
+					padding: 10px;
 					button {
 						margin-left: 10px;
 						color: #181a20;
@@ -46,6 +57,10 @@
 						font-style: normal;
 						font-weight: bold;
 						line-height: 26px;
+						border: 1px solid #0f65d6;
+						border-radius: 11px;
+						// padding: 15px;
+						background: #888686;
 						&:hover {
 							background: none;
 						}

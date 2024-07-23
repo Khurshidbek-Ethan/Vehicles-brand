@@ -176,9 +176,10 @@
 			position: absolute;
 			padding: 12px;
 			top: 12px;
+			gap:12px;
 			left: 12px;
 			border-radius: 6px;
-			background: #eb6753;
+			background: #bab8b7;
 			color: #fff;
 			font-family: $font;
 			font-size: 12px;
@@ -197,9 +198,10 @@
 			display: flex;
 			flex-direction: column;
 			strong {
+				top:20px;
 				color: #181a20;
 				font-family: $font;
-				font-size: 15px;
+				font-size: 25px;
 				font-style: normal;
 				font-weight: 600;
 				line-height: normal;
