@@ -39,8 +39,9 @@
 				margin-top: 35px;
 				gap: 25px;
 				border-radius: 12px;
-				border: 1px solid #c4c4c4;
-				background: #fff;
+				border: 1px solid #545f80;
+
+				background: #f4f4f4d7;
 				box-shadow: 0px 1px 4px 0px rgba(24, 26, 32, 0.07);
 				.photo-box {
 					gap: 23px;
@@ -79,7 +80,11 @@
 							}
 						}
 						.upload-big-box {
+							background-color: #ffffff;
+							padding: 29px;
 							align-self: flex-end;
+							border: 1px solid #545f80;
+							border-radius: 12px;
 							gap: 22px;
 							.labeler {
 								display: flex;
@@ -89,7 +94,8 @@
 								align-items: center;
 								cursor: pointer;
 								border-radius: 12px;
-								border: 1px solid #181a20;
+								background-color: #cecccc;
+								border: 1px solid #545f80;
 								p {
 									color: #181a20;
 									font-family: $font;
@@ -132,7 +138,7 @@
 							outline: none;
 							padding: 0px 15px;
 							border-radius: 8px;
-							border: 1px solid #ddd;
+							border: 1px solid #545f80;
 							::placeholder {
 								color: #717171;
 								font-family: $font;
@@ -159,7 +165,8 @@
 						outline: none;
 						padding: 0px 15px;
 						border-radius: 8px;
-						border: 1px solid #ddd;
+						border: 1px solid #545f80;
+
 						::placeholder {
 							color: #717171;
 							font-family: $font;

@@ -10,6 +10,7 @@ import { LIKE_TARGET_PROPERTY } from '../../../apollo/user/mutation';
 import { GET_FAVORITES } from '../../../apollo/user/query';
 import { sweetErrorHandling, sweetMixinErrorAlert } from '../../sweetAlert';
 import { Messages } from '../../config';
+import PropCard from '../property/PropertyCard';
 
 const MyFavorites: NextPage = () => {
 	const device = useDeviceDetect();
@@ -67,13 +68,13 @@ const MyFavorites: NextPage = () => {
 				<Stack className="main-title-box">
 					<Stack className="right-box">
 						<Typography className="main-title">My Favorites</Typography>
-						<Typography className="sub-title">We are glad to see you again!</Typography>
+						<Typography className="sub-title">We're pleased to see you again!</Typography>
 					</Stack>
 				</Stack>
 				<Stack className="favorites-list-box">
 					{myFavorites?.length ? (
 						myFavorites?.map((property: Property) => {
-							return <PropertyCard property={property} myFavorites={true} likePropertyHandler={likePropertyHandler} />;
+							return <PropCard property={property} myFavorites={true} likePropertyHandler={likePropertyHandler} />;
 						})
 					) : (
 						<div className={'no-data'}>
@@ -95,7 +96,7 @@ const MyFavorites: NextPage = () => {
 						</Stack>
 						<Stack className="total-result">
 							<Typography>
-								Total {total} favorite propert{total > 1 ? 'ies' : 'y'}
+								Total {total} favorite vehicle{total > 1 ? 's' : ''}
 							</Typography>
 						</Stack>
 					</Stack>

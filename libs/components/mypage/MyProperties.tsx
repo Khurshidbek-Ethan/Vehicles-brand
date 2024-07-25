@@ -98,8 +98,8 @@ const MyProperties: NextPage = ({ initialInput, ...props }: any) => {
 			<div id="my-property-page">
 				<Stack className="main-title-box">
 					<Stack className="right-box">
-						<Typography className="main-title">My Properties</Typography>
-						<Typography className="sub-title">We are glad to see you again!</Typography>
+						<Typography className="main-title">My Vehicles</Typography>
+						<Typography className="sub-title">We're thrilled to see you again!</Typography>
 					</Stack>
 				</Stack>
 				<Stack className="property-list-box">
@@ -157,7 +157,7 @@ const MyProperties: NextPage = ({ initialInput, ...props }: any) => {
 									/>
 								</Stack>
 								<Stack className="total-result">
-									<Typography>{total} property available</Typography>
+									<Typography>{total} Vehicles</Typography>
 								</Stack>
 							</Stack>
 						)}

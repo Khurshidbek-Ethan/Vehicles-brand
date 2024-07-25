@@ -7,6 +7,7 @@ import { Property } from '../../types/property/property';
 import { T } from '../../types/common';
 import { useQuery } from '@apollo/client';
 import { GET_VISITED } from '../../../apollo/user/query';
+import PropCard from '../property/PropertyCard';
 
 const RecentlyVisited: NextPage = () => {
 	const device = useDeviceDetect();
@@ -51,7 +52,7 @@ const RecentlyVisited: NextPage = () => {
 				<Stack className="favorites-list-box">
 					{recentlyVisited?.length ? (
 						recentlyVisited?.map((property: Property) => {
-							return <PropertyCard property={property} recentlyVisited={true} />;
+							return <PropCard property={property} recentlyVisited={true} likePropertyHandler={undefined} />;
 						})
 					) : (
 						<div className={'no-data'}>
@@ -73,7 +74,7 @@ const RecentlyVisited: NextPage = () => {
 						</Stack>
 						<Stack className="total-result">
 							<Typography>
-								Total {total} recently visited propert{total > 1 ? 'ies' : 'y'}
+								Total {total} recently visited vehicle{total > 1 ? 's' : ''}
 							</Typography>
 						</Stack>
 					</Stack>
