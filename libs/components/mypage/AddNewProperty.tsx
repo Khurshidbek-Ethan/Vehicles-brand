@@ -336,7 +336,7 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 
 							<Stack className="config-row"></Stack>
 
-							<Typography className="property-title">Property Description</Typography>
+							<Typography className="property-title">Vehicle Description</Typography>
 							<Stack className="config-column">
 								<Typography className="title">Description</Typography>
 								<textarea

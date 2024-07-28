@@ -93,7 +93,7 @@ const MyArticles: NextPage = ({ initialInput, ...props }: T) => {
 						})
 					) : (
 						<div className={'no-data'}>
-							<img src="/img/icons/icoAlert.svg" alt="" />
+							<img src="/img/icons/up.png" alt="" />
 							<p>No Articles found!</p>
 						</div>
 					)}
