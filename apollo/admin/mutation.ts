@@ -73,15 +73,10 @@ export const REMOVE_PROPERTY_BY_ADMIN = gql`
 			propertyAddress
 			propertyTitle
 			propertyPrice
-			propertySquare
-			propertyBeds
-			propertyRooms
 			propertyViews
 			propertyLikes
 			propertyImages
-			propertyDesc
-			propertyBarter
-			propertyRent
+			propertyDesc			propertyRent
 			memberId
 			soldAt
 			deletedAt

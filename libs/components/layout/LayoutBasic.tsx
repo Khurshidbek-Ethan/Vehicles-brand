@@ -34,24 +34,24 @@ const withLayoutBasic = (Component: any) => {
 					bgImage = '/img/banner/aqa.png';
 					break;
 				case '/agent':
-					title = 'Agents';
-					desc = 'Home / For Rent';
-					bgImage = '/img/banner/agents.webp';
+					title = '';
+					desc = '';
+					bgImage = '/img/banner/dil.png';
 					break;
 				case '/agent/detail':
-					title = 'Agent Page';
-					desc = 'Home / For Rent';
-					bgImage = '/img/banner/header2.svg';
+					title = 'Delaer Page';
+					desc = ' ';
+					bgImage = '/img/banner/del4.png';
 					break;
 				case '/mypage':
-					title = 'my page';
-					desc = 'Home / For Rent';
-					bgImage = '/img/banner/header1.svg';
+					title = '  .  ';
+					desc = 'MY Page';
+					bgImage = '/img/banner/my3.png';
 					break;
 				case '/community':
-					title = 'Community';
+					title = '';
 					desc = 'Home / For Rent';
-					bgImage = '/img/banner/header2.svg';
+					bgImage = '/img/banner/buf.png';
 					break;
 				case '/community/detail':
 					title = 'Community Detail';
@@ -59,9 +59,9 @@ const withLayoutBasic = (Component: any) => {
 					bgImage = '/img/banner/header2.svg';
 					break;
 				case '/cs':
-					title = 'CS';
-					desc = 'We are glad to see you again!';
-					bgImage = '/img/banner/header2.svg';
+					title = '';
+					desc = '';
+					bgImage = '/img/banner/cs.png';
 					break;
 				case '/account/join':
 					title = 'Login/Signup';
@@ -71,8 +71,8 @@ const withLayoutBasic = (Component: any) => {
 					break;
 				case '/member':
 					title = 'Member Page';
-					desc = 'Home / For Rent';
-					bgImage = '/img/banner/header1.svg';
+					desc = '';
+					bgImage = '/img/banner/be2.png';
 					break;
 				default:
 					break;

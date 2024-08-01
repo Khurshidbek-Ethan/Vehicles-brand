@@ -23,7 +23,7 @@ export const getStaticProps = async ({ locale }: any) => ({
 		...(await serverSideTranslations(locale, ['common'])),
 	},
 });
-
+// 
 const Community: NextPage = ({ initialInput, ...props }: T) => {
 	const device = useDeviceDetect();
 	const router = useRouter();
@@ -115,7 +115,7 @@ const Community: NextPage = ({ initialInput, ...props }: T) => {
 						<Stack className="main-box">
 							<Stack className="left-config">
 								<Stack className={'image-info'}>
-									<img src={'/img/logo/logoText.svg'} />
+									<img src={'/img/logo/burg2.svg'} />
 									<Stack className={'community-name'}>
 										<Typography className={'name'}>vehicles Community</Typography>
 									</Stack>

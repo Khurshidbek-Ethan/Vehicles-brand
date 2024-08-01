@@ -111,7 +111,7 @@ const TuiEditor = () => {
 			sweetErrorHandling(new Error(Message.INSERT_ALL_INPUTS)).then();
 		}
 	};
-
+// 
 	const doDisabledCheck = () => {
 		if (memoizedValues.articleContent === '' || memoizedValues.articleTitle === '') {
 			return true;

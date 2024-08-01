@@ -6,23 +6,10 @@ const Advertisement = () => {
 	const device = useDeviceDetect();
 
 	if (device == 'mobile') {
-		return (
-			<Stack className={'video-frame'}>
-				<video
-					autoPlay
-					muted
-					loop
-					playsInline
-					preload="auto"
-					style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-				>
-					<source src="/video/ads.mov" type="video/mp4" />
-				</video>
-			</Stack>
-		);
+		return <Stack className={'video-frame'}></Stack>;
 	} else {
 		return (
-			<Stack className={'video-frame'} marginLeft={'80px'}>
+			<Stack className={'video-frame'} marginLeft={'80px'} style={{ width: 'auto' }}>
 				<Stack className="first-block">
 					<div className="block1">
 						<video
@@ -33,7 +20,7 @@ const Advertisement = () => {
 							preload="auto"
 							style={{ width: '100%', height: '300px', objectFit: 'cover', paddingLeft: '5px' }}
 						>
-							<source src="/video/ads.mov" type="video/mp4" />
+							<source src="/video/hyun.mov" type="video/mp4" />
 						</video>
 					</div>
 
@@ -46,7 +33,7 @@ const Advertisement = () => {
 							preload="auto"
 							style={{ width: '100%', height: '300px', objectFit: 'cover', marginTop: '10px', paddingLeft: '5px' }}
 						>
-							<source src="/video/ads.mov" type="video/mp4" />
+							<source src="/video/audi.mov" type="video/mp4" />
 						</video>
 					</div>
 				</Stack>
@@ -59,14 +46,14 @@ const Advertisement = () => {
 							playsInline
 							preload="auto"
 							style={{
-								width: '1050px',
+								width: '960px',
 								height: '200px',
 								objectFit: 'cover',
 								paddingLeft: '15px',
 								paddingRight: '20px',
 							}}
 						>
-							<source src="/video/ads.mov" type="video/mp4" />
+							<source src="/video/genesisv.mov" type="video/mp4" />
 						</video>
 					</div>
 					<div className="second2">
@@ -77,7 +64,7 @@ const Advertisement = () => {
 							playsInline
 							preload="auto"
 							style={{
-								width: '1050px',
+								width: '960px',
 								height: '200px',
 								objectFit: 'cover',
 								paddingTop: '10px',
@@ -85,7 +72,7 @@ const Advertisement = () => {
 								paddingRight: '20px',
 							}}
 						>
-							<source src="/video/ads.mov" type="video/mp4" />
+							<source src="/video/mers.mov" type="video/mp4" />
 						</video>
 					</div>
 					<div className="second3">
@@ -96,7 +83,7 @@ const Advertisement = () => {
 							playsInline
 							preload="auto"
 							style={{
-								width: '1050px',
+								width: '960px',
 								height: '210px',
 								objectFit: 'cover',
 								paddingTop: '10px',
@@ -104,7 +91,7 @@ const Advertisement = () => {
 								paddingRight: '20px',
 							}}
 						>
-							<source src="/video/ads.mov" type="video/mp4" />
+							<source src="/video/Kiav.mov" type="video/mp4" />
 						</video>
 					</div>
 				</Stack>

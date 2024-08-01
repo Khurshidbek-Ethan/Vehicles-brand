@@ -47,7 +47,6 @@ const Home: NextPage = () => {
 				<VehicleMerc />
 				<VehicleKia />
 				<Advertisement />
-
 				<TopAgents />
 				<Events />
 				<CommunityBoards />

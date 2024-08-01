@@ -155,9 +155,9 @@ const VehicleBmw = (props: TrendPropertiesProps) => {
 VehicleBmw.defaultProps = {
 	initialInput: {
 		page: 1,
-		limit: 8,
-		sort: 'createdAt',
-		direction: 'ASC',
+		limit: 7,
+		sort: 'propertyPrice',
+		direction: 'DESC',
 		search: {},
 	},
 };
