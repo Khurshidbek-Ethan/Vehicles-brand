@@ -1184,20 +1184,21 @@
 							}
 						}
 						.top-agent-card {
+							// border:1px solid black;
 							width: 205px;
-							height: 280px;
+							height: 380px;
 							display: flex;
 							flex-direction: column;
 							img {
 								top: 30px;
 								width: 209px;
 								height: 209px;
-								border-radius: 50%;
+								border-radius: 20%;
 								cursor: pointer;
 								object-fit: cover;
 							}
 							strong {
-								margin-top: 30px;
+								margin-top: 5px;
 								color: #181a20;
 								text-align: center;
 								font-family: $font;
@@ -1224,10 +1225,12 @@
 		}
 		.events {
 			// border: 1px solid black;
+			justify-content: space-around;
+
 			position: relative;
 			margin-top: 100px;
 			width: 100%;
-			height: 810px;
+			height: 700px;
 			display: flex;
 			flex-direction: row;
 			// background: #181a20;
@@ -1237,13 +1240,18 @@
 				.card-wrapper {
 					position: relative;
 					margin-top: 28px;
+					margin-left: 20px;
 					width: 100%;
 					height: auto;
 					display: flex;
 					flex-direction: row;
-					justify-content: space-between;
+					justify-content: space-around;
 					.event-card {
 						// margin-top: 30px;
+						justify-content: space-between;
+						// border: 1px solid black;
+					margin-left: 30px;
+                         
 						position: relative;
 						width: 600px;
 						height: 650px;
@@ -1264,8 +1272,8 @@
 							display: flex;
 							flex-direction: column;
 							// top: 5px;
-							left: 10px;
-							right: 10px;
+							left: 20px;
+							right: 20px;
 							strong {
 								color: #181717;
 								font-family: $font;

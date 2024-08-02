@@ -105,7 +105,6 @@ const TrendProperties = (props: TrendPropertiesProps) => {
 					<Stack className={'info-box'}>
 						<Box component={'div'} className={'left'}>
 							<span>MERCEDES LINE</span>
-							<p>Trend is based on likes</p>
 						</Box>
 						{/*  =============*/}
 						<Box component={'div'} className={'right'}>
@@ -156,8 +155,8 @@ TrendProperties.defaultProps = {
 	initialInput: {
 		page: 1,
 		limit: 8,
-		sort: 'createdAt',
-		direction: 'DESC',
+		sort: 'propertyLikes',
+		direction: 'ASC',
 		search: {},
 	},
 };

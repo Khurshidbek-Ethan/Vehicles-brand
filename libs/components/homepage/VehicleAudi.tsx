@@ -105,7 +105,6 @@ const VehicleAudi = (props: TrendPropertiesProps) => {
 					<Stack className={'info-box'}>
 						<Box component={'div'} className={'left'}>
 							<span>AUDI LINE</span>
-							<p>Trend is based on likes</p>
 						</Box>
 						<Box component={'div'} className={'right'}>
 							<div className={'pagination-box'}>

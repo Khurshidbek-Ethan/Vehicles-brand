@@ -25,9 +25,10 @@
            display: flex;
            flex-direction: row;
            align-items: center;
+          //  margin-left: 5px;
            img {
-             width: 40px;
-             height: 40px;
+             width: 90px;
+             height: 60px;
            }
            span {
              margin-left: 10px;
@@ -151,7 +152,7 @@
              width: 100%;
              height: 55px;
              border-radius: 12px;
-             background:  #EB6753;
+             background:  #4278cf;
              font-family: $font;
              font-size: 15px;
              font-style: normal;
@@ -171,7 +172,7 @@
              font-style: normal;
              line-height: normal;
              font-weight: 400;
-             color:  #181A20;
+             color:  #4669c9;
              b {
                margin-left: 10px;
                font-weight: 600;
@@ -185,8 +186,9 @@
        .right {
          width: 50%;
          height: 100%;
-         background-image: url("/img/banner/joinBg.svg");
-         background-size: cover;
+         background-image: url("/img/banner/login.png");
+         background-size: contain;
+         background-repeat: no-repeat;
        }
      }
    }

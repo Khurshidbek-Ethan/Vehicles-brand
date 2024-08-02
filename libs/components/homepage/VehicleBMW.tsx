@@ -105,7 +105,7 @@ const VehicleBmw = (props: TrendPropertiesProps) => {
 					<Stack className={'info-box'}>
 						<Box component={'div'} className={'left'}>
 							<span>BMW LINE</span>
-							<p>Trend is based on likes</p>
+
 						</Box>
 						{/*  =============*/}
 						<Box component={'div'} className={'right'}>
@@ -155,8 +155,8 @@ const VehicleBmw = (props: TrendPropertiesProps) => {
 VehicleBmw.defaultProps = {
 	initialInput: {
 		page: 1,
-		limit: 7,
-		sort: 'propertyPrice',
+		limit: 8,
+		sort: 'propertyRank',
 		direction: 'DESC',
 		search: {},
 	},

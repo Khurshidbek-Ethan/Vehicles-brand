@@ -105,7 +105,6 @@ const VehicleGenesis = (props: TrendPropertiesProps) => {
 					<Stack className={'info-box'}>
 						<Box component={'div'} className={'left'}>
 							<span>GENESIS LINE</span>
-							<p>Trend is based on likes</p>
 						</Box>
 						{/*  =============*/}
 						<Box component={'div'} className={'right'}>
@@ -156,8 +155,8 @@ VehicleGenesis.defaultProps = {
 	initialInput: {
 		page: 1,
 		limit: 8,
-		sort: 'createdAt',
-		direction: 'DESC',
+		sort: 'propertyRank',
+		direction: 'ASC',
 		search: {},
 	},
 };
