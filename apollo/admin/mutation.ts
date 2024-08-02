@@ -18,11 +18,14 @@ export const UPDATE_MEMBER_BY_ADMIN = gql`
 			memberAddress
 			memberDesc
 			memberProperties
-			memberRank
 			memberArticles
+			memberFollowers
+			memberFollowings
 			memberPoints
 			memberLikes
 			memberViews
+			memberComments
+			memberRank
 			memberWarnings
 			memberBlocks
 			deletedAt
@@ -44,15 +47,17 @@ export const UPDATE_PROPERTY_BY_ADMIN = gql`
 			propertyType
 			propertyStatus
 			propertyLocation
+			propertyBrand
+			propertyColor
 			propertyAddress
 			propertyTitle
 			propertyPrice
 			propertyViews
 			propertyLikes
+			propertyComments
+			propertyRank
 			propertyImages
 			propertyDesc
-			propertyBarter
-			propertyRent
 			memberId
 			soldAt
 			deletedAt
@@ -70,13 +75,17 @@ export const REMOVE_PROPERTY_BY_ADMIN = gql`
 			propertyType
 			propertyStatus
 			propertyLocation
+			propertyBrand
+			propertyColor
 			propertyAddress
 			propertyTitle
 			propertyPrice
 			propertyViews
 			propertyLikes
+			propertyComments
+			propertyRank
 			propertyImages
-			propertyDesc			propertyRent
+			propertyDesc
 			memberId
 			soldAt
 			deletedAt
@@ -102,6 +111,7 @@ export const UPDATE_BOARD_ARTICLE_BY_ADMIN = gql`
 			articleImage
 			articleViews
 			articleLikes
+			articleComments
 			memberId
 			createdAt
 			updatedAt
@@ -120,6 +130,7 @@ export const REMOVE_BOARD_ARTICLE_BY_ADMIN = gql`
 			articleImage
 			articleViews
 			articleLikes
+			articleComments
 			memberId
 			createdAt
 			updatedAt

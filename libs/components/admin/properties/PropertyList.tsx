@@ -26,6 +26,8 @@ interface Data {
 	price: string;
 	agent: string;
 	location: string;
+	brand: "string";
+	color: "string";
 	type: string;
 	status: string;
 }
@@ -81,6 +83,18 @@ const headCells: readonly HeadCell[] = [
 		numeric: false,
 		disablePadding: false,
 		label: 'STATUS',
+	},
+	{
+		id: 'brand',
+		numeric: false,
+		disablePadding: false,
+		label: 'Brand',
+	},
+	{
+		id: 'color',
+		numeric: false,
+		disablePadding: false,
+		label: 'COLOR',
 	},
 ];
 
@@ -180,6 +194,8 @@ export const PropertyPanelList = (props: PropertyPanelListType) => {
 										<TableCell align="center">{property.memberData?.memberNick}</TableCell>
 										<TableCell align="center">{property.propertyLocation}</TableCell>
 										<TableCell align="center">{property.propertyType}</TableCell>
+										<TableCell align="center">{property.propertyBrand}</TableCell>
+										<TableCell align="center">{property.propertyColor}</TableCell>
 										<TableCell align="center">
 											{property.propertyStatus === PropertyStatus.DELETE && (
 												<Button
