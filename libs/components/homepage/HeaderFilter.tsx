@@ -238,89 +238,83 @@ const HeaderFilter = (props: HeaderFilterProps) => {
 	} else {
 		return (
 			<>
-				
-					<Stack className={'search-box'}>
-						<Stack className={'search-box-other'}>
-							
-
-							<Box className={'search-btn'} onClick={pushSearchHandler}>
-								<img src="/img/icons/search_white.svg" alt="" />
-							</Box>
-						</Stack>
-						<Stack className={'select-box'}>
-							<Box component={'div'} className={`box ${openLocation ? 'on' : ''}`} onClick={locationStateChangeHandler}>
-								<span>
-									{searchFilter?.search?.locationList ? searchFilter?.search?.locationList[0] : t('Location')}{' '}
-								</span>
-								<ExpandMoreIcon />
-							</Box>
-							<Box className={`box ${openType ? 'on' : ''}`} onClick={typeStateChangeHandler}>
-								<span> {searchFilter?.search?.typeList ? searchFilter?.search?.typeList[0] : t('Vehicles')} </span>
-								<ExpandMoreIcon />
-							</Box>
-							<Box className={`box ${openBrand ? 'on' : ''}`} onClick={brandStateChangeHandler}>
-								<span>
-									{searchFilter?.search?.brandList ? `${searchFilter?.search?.brandList[0]} brands }` : t('Brands')}
-								</span>
-								<ExpandMoreIcon />
-							</Box>
-							<Box className={`box ${openColor ? 'on' : ''}`} onClick={colorStateChangeHandler}>
-								<span>
-									{searchFilter?.search?.colorList ? `${searchFilter?.search?.colorList[0]} color}` : t('Color')}
-								</span>
-								<ExpandMoreIcon />
-							</Box>
-						</Stack>
-
-						{/*MENU */}
-						<div className={`filter-location ${openLocation ? 'on' : ''}`} ref={locationRef}>
-							{propertyLocation.map((location: string) => {
-								return (
-									<div onClick={() => propertyLocationSelectHandler(location)} key={location}>
-										<img src={`img/banner/cities/${location}.webp`} alt="" />
-										<span>{location}</span>
-									</div>
-								);
-							})}
-						</div>
-
-						<div className={`filter-type ${openType ? 'on' : ''}`} ref={typeRef}>
-							{propertyType.map((type: string) => {
-								return (
-									<div
-										style={{ backgroundImage: `url(/img/banner/types/${type.toLowerCase()}.webp)` }}
-										onClick={() => propertyTypeSelectHandler(type)}
-										key={type}
-									>
-										<span>{type}</span>
-									</div>
-								);
-							})}
-						</div>
-
-						<div className={`filter-brand ${openBrand ? 'on' : ''}`} ref={brandRef}>
-							{propertyBrand.map((brand: string) => {
-								return (
-									<div onClick={() => propertyBrandSelectHandler(brand)} key={brand}>
-										<img src={`img/banner/brand/${brand}.webp`} alt="" />
-										<span>{brand}</span>
-									</div>
-								);
-							})}
-						</div>
-
-						<div className={`filter-color ${openColor ? 'on' : ''}`} ref={colorRef}>
-							{propertyColor.map((color: string) => {
-								return (
-									<div onClick={() => propertyColorSelectHandler(color)} key={color}>
-										<img src={`img/banner/color/${color}.webp`} alt="" />
-										<span>{color}</span>
-									</div>
-								);
-							})}
-						</div>
+				<Stack className={'search-box'}>
+					<Stack className={'search-box-other'}>
+						<Box className={'search-btn'} onClick={pushSearchHandler}>
+							<img src="/img/icons/search_white.svg" alt="" />
+						</Box>
 					</Stack>
-				
+					<Stack className={'select-box'}>
+						<Box component={'div'} className={`box ${openLocation ? 'on' : ''}`} onClick={locationStateChangeHandler}>
+							<span>{searchFilter?.search?.locationList ? searchFilter?.search?.locationList[0] : t('Location')} </span>
+							<ExpandMoreIcon />
+						</Box>
+						<Box className={`box ${openType ? 'on' : ''}`} onClick={typeStateChangeHandler}>
+							<span> {searchFilter?.search?.typeList ? searchFilter?.search?.typeList[0] : t('Vehicles')} </span>
+							<ExpandMoreIcon />
+						</Box>
+						<Box className={`box ${openBrand ? 'on' : ''}`} onClick={brandStateChangeHandler}>
+							<span>
+								{searchFilter?.search?.brandList ? `${searchFilter?.search?.brandList[0]} brands ` : t('Brands')}
+							</span>
+							<ExpandMoreIcon />
+						</Box>
+						<Box className={`box ${openColor ? 'on' : ''}`} onClick={colorStateChangeHandler}>
+							<span>
+								{searchFilter?.search?.colorList ? `${searchFilter?.search?.colorList[0]} color` : t('Color')}
+							</span>
+							<ExpandMoreIcon />
+						</Box>
+					</Stack>
+
+					{/*MENU */}
+					<div className={`filter-location ${openLocation ? 'on' : ''}`} ref={locationRef}>
+						{propertyLocation.map((location: string) => {
+							return (
+								<div onClick={() => propertyLocationSelectHandler(location)} key={location}>
+									<img src={`img/banner/cities/${location}.webp`} alt="" />
+									<span>{location}</span>
+								</div>
+							);
+						})}
+					</div>
+
+					<div className={`filter-type ${openType ? 'on' : ''}`} ref={typeRef}>
+						{propertyType.map((type: string) => {
+							return (
+								<div
+									style={{ backgroundImage: `url(/img/banner/types/${type.toLowerCase()}.webp)` }}
+									onClick={() => propertyTypeSelectHandler(type)}
+									key={type}
+								>
+									<span>{type}</span>
+								</div>
+							);
+						})}
+					</div>
+
+					<div className={`filter-brand ${openBrand ? 'on' : ''}`} ref={brandRef}>
+						{propertyBrand.map((brand: string) => {
+							return (
+								<div onClick={() => propertyBrandSelectHandler(brand)} key={brand}>
+									<img src={`img/banner/brand/${brand}.webp`} alt="" />
+									<span>{brand}</span>
+								</div>
+							);
+						})}
+					</div>
+
+					<div className={`filter-color ${openColor ? 'on' : ''}`} ref={colorRef}>
+						{propertyColor.map((color: string) => {
+							return (
+								<div onClick={() => propertyColorSelectHandler(color)} key={color}>
+									<img src={`img/banner/color/${color}.webp`} alt="" />
+									<span>{color}</span>
+								</div>
+							);
+						})}
+					</div>
+				</Stack>
 
 				{/* @ts-ignore */}
 				<Box sx={style}></Box>
