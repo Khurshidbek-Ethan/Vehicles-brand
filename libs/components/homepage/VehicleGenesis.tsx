@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
 import { Property } from '../../types/property/property';
 import { PropertiesInquiry } from '../../types/property/property.input';
-import TrendPropertyCard from './VehicleBMWCard';
+
 import { useMutation, useQuery } from '@apollo/client';
 import { GET_PROPERTIES, GET_PROPERTY } from '../../../apollo/user/query';
 import { T } from '../../types/common';
@@ -104,7 +104,7 @@ const VehicleGenessis = (props: TrendPropertiesProps) => {
 				<Stack className={'container'}>
 					<Stack className={'info-box'}>
 						<Box component={'div'} className={'left'}>
-							<span>AUDI LINE</span>
+							<span>Genesis LINE</span>
 						</Box>
 						<Box component={'div'} className={'right'}>
 							<div className={'pagination-box'}>

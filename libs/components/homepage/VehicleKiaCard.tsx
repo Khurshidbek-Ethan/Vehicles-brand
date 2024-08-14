@@ -98,7 +98,7 @@ const VehicleKiaCard = (props: TrendPropertyCardProps) => {
 						</div>
 						<div>
 							<img src="/img/icons/colorcar.png" alt="" />
-							<span>{property.propertyColor} COLOR</span>
+							<span>{property.propertyColor} </span>
 						</div>
 						<div>
 							<img src="/img/icons/suv.jpeg" alt="" />

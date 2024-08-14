@@ -99,11 +99,11 @@ const PropCard = (props: PropertyCardType) => {
 					<div className={'options'}>
 						<div>
 							<img src="/img/icons/car.png" alt="" />
-							<span>{property.propertyBrand} bed</span>
+							<span>{property.propertyBrand}</span>
 						</div>
 						<div>
 							<img src="/img/icons/colorcar.png" alt="" />
-							<span>{property.propertyColor} Color</span>
+							<span>{property.propertyColor} </span>
 						</div>
 						<div>
 							<img src="/img/icons/colcar.png" alt="" />
