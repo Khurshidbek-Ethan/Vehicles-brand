@@ -7,20 +7,21 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
 import { Property } from '../../types/property/property';
 import { PropertiesInquiry } from '../../types/property/property.input';
+import TrendPropertyCard from './VehicleBMWCard';
 import { useMutation, useQuery } from '@apollo/client';
-import { GET_PROPERTIES } from '../../../apollo/user/query';
+import { GET_PROPERTIES, GET_PROPERTY } from '../../../apollo/user/query';
 import { T } from '../../types/common';
 import { LIKE_TARGET_PROPERTY } from '../../../apollo/user/mutation';
 import { sweetMixinErrorAlert, sweetTopSmallSuccessAlert } from '../../sweetAlert';
 import { Message } from '../../enums/common.enum';
-import VehicleKiaCard from './VehicleKiaCard';
 import { PropertyBrand } from '../../enums/property.enum';
+import VehicleAudiCard from './VehicleAudiCard';
 
 interface TrendPropertiesProps {
 	initialInput: PropertiesInquiry;
 }
 
-const TrendProperties = (props: TrendPropertiesProps) => {
+const VehicleKia = (props: TrendPropertiesProps) => {
 	const { initialInput } = props;
 	const device = useDeviceDetect();
 	const [trendProperties, setTrendProperties] = useState<Property[]>([]);
@@ -39,7 +40,7 @@ const TrendProperties = (props: TrendPropertiesProps) => {
 		notifyOnNetworkStatusChange: true,
 		onCompleted: (data: T) => {
 			const filteredProduct = data?.getProperties?.list.filter(
-				(property: any) => property.propertyBrand === PropertyBrand.KIA,
+				(property: any) => property.propertyBrand === PropertyBrand.AUDI,
 			);
 			setTrendProperties(filteredProduct);
 		},
@@ -50,7 +51,9 @@ const TrendProperties = (props: TrendPropertiesProps) => {
 		try {
 			if (!id) return;
 			if (!user._id) throw new Error(Message.NOT_AUTHENTICATED);
+			//execute likeTargetproperty  Mutationni ishga tushirish
 			await likeTargetproperty({ variables: { input: id } });
+			//execute getPropertiesRefetch
 			await getPropertiesRefetch({ input: initialInput });
 			await sweetTopSmallSuccessAlert('success', 800);
 		} catch (err: any) {
@@ -67,7 +70,7 @@ const TrendProperties = (props: TrendPropertiesProps) => {
 			<Stack className={'trend-properties'}>
 				<Stack className={'container'}>
 					<Stack className={'info-box'}>
-						<span>KIA LINE</span>
+						<span>AUDI</span>
 					</Stack>
 					<Stack className={'card-box'}>
 						{trendProperties.length === 0 ? (
@@ -85,7 +88,7 @@ const TrendProperties = (props: TrendPropertiesProps) => {
 								{trendProperties.map((property: Property) => {
 									return (
 										<SwiperSlide key={property._id} className={'trend-property-slide'}>
-											<VehicleKiaCard property={property} likePropertyHandler={likePropertyHandler} />
+											<VehicleAudiCard property={property} likePropertyHandler={likePropertyHandler} />
 										</SwiperSlide>
 									);
 								})}
@@ -101,9 +104,8 @@ const TrendProperties = (props: TrendPropertiesProps) => {
 				<Stack className={'container'}>
 					<Stack className={'info-box'}>
 						<Box component={'div'} className={'left'}>
-							<span>KIA LINE</span>
+							<span>AUDI LINE</span>
 						</Box>
-						{/*  =============*/}
 						<Box component={'div'} className={'right'}>
 							<div className={'pagination-box'}>
 								<WestIcon className={'swiper-trend-prev'} />
@@ -111,7 +113,6 @@ const TrendProperties = (props: TrendPropertiesProps) => {
 								<EastIcon className={'swiper-trend-next'} />
 							</div>
 						</Box>
-						{/* ------------ */}
 					</Stack>
 					<Stack className={'card-box'}>
 						{trendProperties.length === 0 ? (
@@ -135,7 +136,7 @@ const TrendProperties = (props: TrendPropertiesProps) => {
 								{trendProperties.map((property: Property) => {
 									return (
 										<SwiperSlide key={property._id} className={'trend-property-slide'}>
-											<VehicleKiaCard property={property} likePropertyHandler={likePropertyHandler} />
+											<VehicleAudiCard property={property} likePropertyHandler={likePropertyHandler} />
 										</SwiperSlide>
 									);
 								})}
@@ -148,14 +149,14 @@ const TrendProperties = (props: TrendPropertiesProps) => {
 	}
 };
 
-TrendProperties.defaultProps = {
+VehicleKia.defaultProps = {
 	initialInput: {
 		page: 1,
 		limit: 8,
 		sort: 'createdAt',
-		direction: 'DESC',
+		direction: 'ASC',
 		search: {},
 	},
 };
 
-export default TrendProperties;
+export default VehicleKia;

@@ -255,13 +255,13 @@ const HeaderFilter = (props: HeaderFilterProps) => {
 						</Box>
 						<Box className={`box ${openBrand ? 'on' : ''}`} onClick={brandStateChangeHandler}>
 							<span>
-								{searchFilter?.search?.brandList ? `${searchFilter?.search?.brandList[0]} brands ` : t('Brands')}
+								{searchFilter?.search?.brandList ? `${searchFilter?.search?.brandList[0]}  ` : t('Brands')}
 							</span>
 							<ExpandMoreIcon />
 						</Box>
 						<Box className={`box ${openColor ? 'on' : ''}`} onClick={colorStateChangeHandler}>
 							<span>
-								{searchFilter?.search?.colorList ? `${searchFilter?.search?.colorList[0]} color` : t('Color')}
+								{searchFilter?.search?.colorList ? `${searchFilter?.search?.colorList[0]} ` : t('Color')}
 							</span>
 							<ExpandMoreIcon />
 						</Box>

@@ -14,8 +14,8 @@ interface TrendPropertyCardProps {
 	property: Property;
 	likePropertyHandler: any;
 }
-
-const VehicleHyundaiCard = (props: TrendPropertyCardProps) => {
+//
+const VehicleHundaiCard = (props: TrendPropertyCardProps) => {
 	const { property, likePropertyHandler } = props;
 	const device = useDeviceDetect();
 	const router = useRouter();
@@ -50,7 +50,7 @@ const VehicleHyundaiCard = (props: TrendPropertyCardProps) => {
 						</div>
 						<div>
 							<img src="/img/icons/room.svg" alt="" />
-							<span>{property.propertyColor} </span>
+							<span>{property.propertyColor} COLOR</span>
 						</div>
 						<div>
 							<img src="/img/icons/expand.svg" alt="" />
@@ -59,7 +59,6 @@ const VehicleHyundaiCard = (props: TrendPropertyCardProps) => {
 					</div>
 					<Divider sx={{ mt: '15px', mb: '17px' }} />
 					<div className={'bott'}>
-						
 						<div className="view-like-box">
 							<IconButton color={'default'}>
 								<RemoveRedEyeIcon />
@@ -80,7 +79,7 @@ const VehicleHyundaiCard = (props: TrendPropertyCardProps) => {
 		);
 	} else {
 		return (
-			<Stack className="NYUNDAI-card-box" key={property._id}>
+			<Stack className="HYUNDAI-card-box" key={property._id}>
 				<Box
 					component={'div'}
 					className={'card-img'}
@@ -99,21 +98,24 @@ const VehicleHyundaiCard = (props: TrendPropertyCardProps) => {
 						</div>
 						<div>
 							<img src="/img/icons/colorcar.png" alt="" />
-							<span>{property.propertyColor} Color</span>
+							<span>{property.propertyColor} COLOR</span>
 						</div>
 						<div>
-							<img src="/img/icons/colcar.png" alt="" />
+							<img src="/img/icons/suv.jpeg" alt="" />
 							<span>{property.propertyType} </span>
 						</div>
 					</div>
 					<Divider sx={{ mt: '15px', mb: '17px' }} />
 					<div className={'bott'}>
 						<div>${property.propertyPrice}</div>
+
 						<div className="view-like-box">
 							<IconButton color={'default'}>
 								<RemoveRedEyeIcon />
 							</IconButton>
+
 							<Typography className="view-cnt">{property?.propertyViews}</Typography>
+
 							<IconButton color={'default'} onClick={() => likePropertyHandler(user, property?._id)}>
 								{property?.meLiked && property?.meLiked[0]?.myFavorite ? (
 									<FavoriteIcon style={{ color: 'red' }} />
@@ -130,4 +132,4 @@ const VehicleHyundaiCard = (props: TrendPropertyCardProps) => {
 	}
 };
 
-export default VehicleHyundaiCard;
+export default VehicleHundaiCard;

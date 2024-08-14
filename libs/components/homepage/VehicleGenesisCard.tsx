@@ -14,8 +14,8 @@ interface TrendPropertyCardProps {
 	property: Property;
 	likePropertyHandler: any;
 }
-
-const VehicleGenesisCard = (props: TrendPropertyCardProps) => {
+//
+const VehicleGenessisCard = (props: TrendPropertyCardProps) => {
 	const { property, likePropertyHandler } = props;
 	const device = useDeviceDetect();
 	const router = useRouter();
@@ -45,21 +45,20 @@ const VehicleGenesisCard = (props: TrendPropertyCardProps) => {
 					<p className={'desc'}>{property.propertyDesc ?? 'no description'}</p>
 					<div className={'options'}>
 						<div>
-							<img src="/img/icons/car.png" alt="" />
+							<img src="/img/icons/bed.svg" alt="" />
 							<span>{property.propertyBrand} </span>
 						</div>
 						<div>
-							<img src="/img/icons/colorcar.png" alt="" />
-							<span>{property.propertyColor} Color </span>
+							<img src="/img/icons/room.svg" alt="" />
+							<span>{property.propertyColor} COLOR</span>
 						</div>
 						<div>
-							<img src="/img/icons/colcar.png" alt="" />
+							<img src="/img/icons/expand.svg" alt="" />
 							<span>{property.propertyType} </span>
 						</div>
 					</div>
 					<Divider sx={{ mt: '15px', mb: '17px' }} />
 					<div className={'bott'}>
-					
 						<div className="view-like-box">
 							<IconButton color={'default'}>
 								<RemoveRedEyeIcon />
@@ -99,21 +98,24 @@ const VehicleGenesisCard = (props: TrendPropertyCardProps) => {
 						</div>
 						<div>
 							<img src="/img/icons/colorcar.png" alt="" />
-							<span>{property.propertyColor} Color</span>
+							<span>{property.propertyColor} COLOR</span>
 						</div>
 						<div>
-							<img src="/img/icons/colcar.png" alt="" />
+							<img src="/img/icons/suv.jpeg" alt="" />
 							<span>{property.propertyType} </span>
 						</div>
 					</div>
 					<Divider sx={{ mt: '15px', mb: '17px' }} />
 					<div className={'bott'}>
 						<div>${property.propertyPrice}</div>
+
 						<div className="view-like-box">
 							<IconButton color={'default'}>
 								<RemoveRedEyeIcon />
 							</IconButton>
+
 							<Typography className="view-cnt">{property?.propertyViews}</Typography>
+
 							<IconButton color={'default'} onClick={() => likePropertyHandler(user, property?._id)}>
 								{property?.meLiked && property?.meLiked[0]?.myFavorite ? (
 									<FavoriteIcon style={{ color: 'red' }} />
@@ -130,4 +132,4 @@ const VehicleGenesisCard = (props: TrendPropertyCardProps) => {
 	}
 };
 
-export default VehicleGenesisCard;
+export default VehicleGenessisCard;

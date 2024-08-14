@@ -7,21 +7,21 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
 import { Property } from '../../types/property/property';
 import { PropertiesInquiry } from '../../types/property/property.input';
-
+import TrendPropertyCard from './VehicleBMWCard';
 import { useMutation, useQuery } from '@apollo/client';
-import { GET_PROPERTIES } from '../../../apollo/user/query';
+import { GET_PROPERTIES, GET_PROPERTY } from '../../../apollo/user/query';
 import { T } from '../../types/common';
 import { LIKE_TARGET_PROPERTY } from '../../../apollo/user/mutation';
 import { sweetMixinErrorAlert, sweetTopSmallSuccessAlert } from '../../sweetAlert';
 import { Message } from '../../enums/common.enum';
-import VehicleGenesisCard from './VehicleGenesisCard';
 import { PropertyBrand } from '../../enums/property.enum';
+import VehicleAudiCard from './VehicleAudiCard';
 
 interface TrendPropertiesProps {
 	initialInput: PropertiesInquiry;
 }
 
-const VehicleGenesis = (props: TrendPropertiesProps) => {
+const VehicleGenessis = (props: TrendPropertiesProps) => {
 	const { initialInput } = props;
 	const device = useDeviceDetect();
 	const [trendProperties, setTrendProperties] = useState<Property[]>([]);
@@ -40,7 +40,7 @@ const VehicleGenesis = (props: TrendPropertiesProps) => {
 		notifyOnNetworkStatusChange: true,
 		onCompleted: (data: T) => {
 			const filteredProduct = data?.getProperties?.list.filter(
-				(property: any) => property.propertyBrand === PropertyBrand.GENESIS,
+				(property: any) => property.propertyBrand === PropertyBrand.AUDI,
 			);
 			setTrendProperties(filteredProduct);
 		},
@@ -70,7 +70,7 @@ const VehicleGenesis = (props: TrendPropertiesProps) => {
 			<Stack className={'trend-properties'}>
 				<Stack className={'container'}>
 					<Stack className={'info-box'}>
-						<span>GENESIS</span>
+						<span>AUDI</span>
 					</Stack>
 					<Stack className={'card-box'}>
 						{trendProperties.length === 0 ? (
@@ -88,7 +88,7 @@ const VehicleGenesis = (props: TrendPropertiesProps) => {
 								{trendProperties.map((property: Property) => {
 									return (
 										<SwiperSlide key={property._id} className={'trend-property-slide'}>
-											<VehicleGenesisCard property={property} likePropertyHandler={likePropertyHandler} />
+											<VehicleAudiCard property={property} likePropertyHandler={likePropertyHandler} />
 										</SwiperSlide>
 									);
 								})}
@@ -104,9 +104,8 @@ const VehicleGenesis = (props: TrendPropertiesProps) => {
 				<Stack className={'container'}>
 					<Stack className={'info-box'}>
 						<Box component={'div'} className={'left'}>
-							<span>GENESIS LINE</span>
+							<span>AUDI LINE</span>
 						</Box>
-						{/*  =============*/}
 						<Box component={'div'} className={'right'}>
 							<div className={'pagination-box'}>
 								<WestIcon className={'swiper-trend-prev'} />
@@ -114,7 +113,6 @@ const VehicleGenesis = (props: TrendPropertiesProps) => {
 								<EastIcon className={'swiper-trend-next'} />
 							</div>
 						</Box>
-						{/* ------------ */}
 					</Stack>
 					<Stack className={'card-box'}>
 						{trendProperties.length === 0 ? (
@@ -138,7 +136,7 @@ const VehicleGenesis = (props: TrendPropertiesProps) => {
 								{trendProperties.map((property: Property) => {
 									return (
 										<SwiperSlide key={property._id} className={'trend-property-slide'}>
-											<VehicleGenesisCard property={property} likePropertyHandler={likePropertyHandler} />
+											<VehicleAudiCard property={property} likePropertyHandler={likePropertyHandler} />
 										</SwiperSlide>
 									);
 								})}
@@ -151,14 +149,14 @@ const VehicleGenesis = (props: TrendPropertiesProps) => {
 	}
 };
 
-VehicleGenesis.defaultProps = {
+VehicleGenessis.defaultProps = {
 	initialInput: {
 		page: 1,
 		limit: 8,
-		sort: 'propertyRank',
+		sort: 'createdAt',
 		direction: 'ASC',
 		search: {},
 	},
 };
 
-export default VehicleGenesis;
+export default VehicleGenessis;

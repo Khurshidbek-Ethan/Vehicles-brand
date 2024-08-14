@@ -14,7 +14,7 @@ interface TrendPropertyCardProps {
 	property: Property;
 	likePropertyHandler: any;
 }
-
+// 
 const VehicleAudiCard = (props: TrendPropertyCardProps) => {
 	const { property, likePropertyHandler } = props;
 	const device = useDeviceDetect();
