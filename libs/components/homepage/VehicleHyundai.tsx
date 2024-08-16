@@ -7,7 +7,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
 import { Property } from '../../types/property/property';
 import { PropertiesInquiry } from '../../types/property/property.input';
-
 import { useMutation, useQuery } from '@apollo/client';
 import { GET_PROPERTIES, GET_PROPERTY } from '../../../apollo/user/query';
 import { T } from '../../types/common';
