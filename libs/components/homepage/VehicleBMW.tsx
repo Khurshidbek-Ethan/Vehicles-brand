@@ -21,11 +21,11 @@ interface TrendPropertiesProps {
 	initialInput: PropertiesInquiry;
 }
 
-const VehicleBWM = (props: TrendPropertiesProps) => {
+const VehicleAudi = (props: TrendPropertiesProps) => {
 	const { initialInput } = props;
 	const device = useDeviceDetect();
 	const [trendProperties, setTrendProperties] = useState<Property[]>([]);
-	console.log('trendProperties ===', trendProperties);
+
 	/** APOLLO REQUESTS **/
 	const [likeTargetproperty] = useMutation(LIKE_TARGET_PROPERTY);
 
@@ -39,10 +39,6 @@ const VehicleBWM = (props: TrendPropertiesProps) => {
 		variables: { input: initialInput },
 		notifyOnNetworkStatusChange: true,
 		onCompleted: (data: T) => {
-			// const filteredProduct = data?.getProperties?.list.filter(
-			// 	(property: any) => property.propertyBrand === PropertyBrand.BMW,
-			// );
-			// setTrendProperties(filteredProduct);
 			setTrendProperties(data?.getProperties?.list);
 		},
 	});
@@ -71,7 +67,7 @@ const VehicleBWM = (props: TrendPropertiesProps) => {
 			<Stack className={'trend-properties'}>
 				<Stack className={'container'}>
 					<Stack className={'info-box'}>
-						<span>AUDI</span>
+						<span>BMW</span>
 					</Stack>
 					<Stack className={'card-box'}>
 						{trendProperties.length === 0 ? (
@@ -150,7 +146,7 @@ const VehicleBWM = (props: TrendPropertiesProps) => {
 	}
 };
 
-VehicleBWM.defaultProps = {
+VehicleAudi.defaultProps = {
 	initialInput: {
 		page: 1,
 		limit: 8,
@@ -160,4 +156,4 @@ VehicleBWM.defaultProps = {
 	},
 };
 
-export default VehicleBWM;
+export default VehicleAudi;

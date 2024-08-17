@@ -16,19 +16,19 @@ import { Message } from '../../enums/common.enum';
 import { PropertyBrand } from '../../enums/property.enum';
 import VehicleAudiCard from './VehicleAudiCard';
 import VehicleMersCard from './VehicleMercCard';
-// 
+//
 interface TrendPropertiesProps {
 	initialInput: PropertiesInquiry;
 }
-// 
+//
 const VehicleMers = (props: TrendPropertiesProps) => {
 	const { initialInput } = props;
 	const device = useDeviceDetect();
 	const [trendProperties, setTrendProperties] = useState<Property[]>([]);
-// 
+	//
 	/** APOLLO REQUESTS **/
 	const [likeTargetproperty] = useMutation(LIKE_TARGET_PROPERTY);
-// 
+	//
 	const {
 		loading: getPropertiesLoading,
 		data: getPropertiesData,
@@ -39,13 +39,10 @@ const VehicleMers = (props: TrendPropertiesProps) => {
 		variables: { input: initialInput },
 		notifyOnNetworkStatusChange: true,
 		onCompleted: (data: T) => {
-			const filteredProduct = data?.getProperties?.list.filter(
-				(property: any) => property.propertyBrand === PropertyBrand.AUDI,
-			);
-			setTrendProperties(filteredProduct);
+			setTrendProperties(data?.getProperties?.list);
 		},
 	});
-// 
+	//
 	/** HANDLERS **/
 	const likePropertyHandler = async (user: T, id: string) => {
 		try {
@@ -61,10 +58,10 @@ const VehicleMers = (props: TrendPropertiesProps) => {
 			sweetMixinErrorAlert(err.message).then();
 		}
 	};
-// 
+	//
 	if (trendProperties) console.log('trendProperties:', trendProperties);
 	if (!trendProperties) return null;
-// 
+	//
 	if (device === 'mobile') {
 		return (
 			<Stack className={'trend-properties'}>
@@ -148,16 +145,16 @@ const VehicleMers = (props: TrendPropertiesProps) => {
 		);
 	}
 };
-// 
+//
 VehicleMers.defaultProps = {
 	initialInput: {
 		page: 1,
 		limit: 8,
 		sort: 'createdAt',
-		direction: 'ASC',
-		search: {},
+		direction: 'DESC',
+		search: { brandList: 'MERCEDES' },
 	},
 };
-// 
+//
 export default VehicleMers;
-// 
+//

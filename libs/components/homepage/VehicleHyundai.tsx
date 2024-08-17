@@ -8,13 +8,14 @@ import { Autoplay, Navigation, Pagination } from 'swiper';
 import { Property } from '../../types/property/property';
 import { PropertiesInquiry } from '../../types/property/property.input';
 import { useMutation, useQuery } from '@apollo/client';
-import { GET_PROPERTIES, GET_PROPERTY } from '../../../apollo/user/query';
+import { GET_PROPERTIES } from '../../../apollo/user/query';
 import { T } from '../../types/common';
 import { LIKE_TARGET_PROPERTY } from '../../../apollo/user/mutation';
 import { sweetMixinErrorAlert, sweetTopSmallSuccessAlert } from '../../sweetAlert';
 import { Message } from '../../enums/common.enum';
-import { PropertyBrand } from '../../enums/property.enum';
+
 import VehicleAudiCard from './VehicleAudiCard';
+import VehicleHundaiCard from './VehicleHyundaiCard';
 
 interface TrendPropertiesProps {
 	initialInput: PropertiesInquiry;
@@ -38,10 +39,7 @@ const VehicleHundai = (props: TrendPropertiesProps) => {
 		variables: { input: initialInput },
 		notifyOnNetworkStatusChange: true,
 		onCompleted: (data: T) => {
-			const filteredProduct = data?.getProperties?.list.filter(
-				(property: any) => property.propertyBrand === PropertyBrand.AUDI,
-			);
-			setTrendProperties(filteredProduct);
+			setTrendProperties(data?.getProperties?.list);
 		},
 	});
 
@@ -69,7 +67,7 @@ const VehicleHundai = (props: TrendPropertiesProps) => {
 			<Stack className={'trend-properties'}>
 				<Stack className={'container'}>
 					<Stack className={'info-box'}>
-						<span>AUDI</span>
+						<span>HUNDAY</span>
 					</Stack>
 					<Stack className={'card-box'}>
 						{trendProperties.length === 0 ? (
@@ -87,7 +85,7 @@ const VehicleHundai = (props: TrendPropertiesProps) => {
 								{trendProperties.map((property: Property) => {
 									return (
 										<SwiperSlide key={property._id} className={'trend-property-slide'}>
-											<VehicleAudiCard property={property} likePropertyHandler={likePropertyHandler} />
+											<VehicleHundaiCard property={property} likePropertyHandler={likePropertyHandler} />
 										</SwiperSlide>
 									);
 								})}
@@ -135,7 +133,7 @@ const VehicleHundai = (props: TrendPropertiesProps) => {
 								{trendProperties.map((property: Property) => {
 									return (
 										<SwiperSlide key={property._id} className={'trend-property-slide'}>
-											<VehicleAudiCard property={property} likePropertyHandler={likePropertyHandler} />
+											<VehicleHundaiCard property={property} likePropertyHandler={likePropertyHandler} />
 										</SwiperSlide>
 									);
 								})}
@@ -154,7 +152,7 @@ VehicleHundai.defaultProps = {
 		limit: 8,
 		sort: 'createdAt',
 		direction: 'DESC',
-		search: {},
+		search: { brandList: 'HYUNDAI' },
 	},
 };
 

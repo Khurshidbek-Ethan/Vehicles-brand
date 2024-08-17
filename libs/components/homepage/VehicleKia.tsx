@@ -13,8 +13,7 @@ import { T } from '../../types/common';
 import { LIKE_TARGET_PROPERTY } from '../../../apollo/user/mutation';
 import { sweetMixinErrorAlert, sweetTopSmallSuccessAlert } from '../../sweetAlert';
 import { Message } from '../../enums/common.enum';
-import { PropertyBrand } from '../../enums/property.enum';
-import VehicleAudiCard from './VehicleAudiCard';
+import VehicleKiaCard from './VehicleKiaCard';
 
 interface TrendPropertiesProps {
 	initialInput: PropertiesInquiry;
@@ -38,10 +37,7 @@ const VehicleKia = (props: TrendPropertiesProps) => {
 		variables: { input: initialInput },
 		notifyOnNetworkStatusChange: true,
 		onCompleted: (data: T) => {
-			const filteredProduct = data?.getProperties?.list.filter(
-				(property: any) => property.propertyBrand === PropertyBrand.AUDI,
-			);
-			setTrendProperties(filteredProduct);
+			setTrendProperties(data?.getProperties?.list);
 		},
 	});
 
@@ -87,7 +83,7 @@ const VehicleKia = (props: TrendPropertiesProps) => {
 								{trendProperties.map((property: Property) => {
 									return (
 										<SwiperSlide key={property._id} className={'trend-property-slide'}>
-											<VehicleAudiCard property={property} likePropertyHandler={likePropertyHandler} />
+											<VehicleKiaCard property={property} likePropertyHandler={likePropertyHandler} />
 										</SwiperSlide>
 									);
 								})}
@@ -135,7 +131,7 @@ const VehicleKia = (props: TrendPropertiesProps) => {
 								{trendProperties.map((property: Property) => {
 									return (
 										<SwiperSlide key={property._id} className={'trend-property-slide'}>
-											<VehicleAudiCard property={property} likePropertyHandler={likePropertyHandler} />
+											<VehicleKiaCard property={property} likePropertyHandler={likePropertyHandler} />
 										</SwiperSlide>
 									);
 								})}
@@ -153,8 +149,8 @@ VehicleKia.defaultProps = {
 		page: 1,
 		limit: 8,
 		sort: 'createdAt',
-		direction: 'ASC',
-		search: {},
+		direction: 'DESC',
+		search: { brandList: 'KIA' },
 	},
 };
 

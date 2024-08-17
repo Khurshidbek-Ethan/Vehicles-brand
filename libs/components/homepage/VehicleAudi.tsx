@@ -38,10 +38,7 @@ const VehicleAudi = (props: TrendPropertiesProps) => {
 		variables: { input: initialInput },
 		notifyOnNetworkStatusChange: true,
 		onCompleted: (data: T) => {
-			const filteredProduct = data?.getProperties?.list.filter(
-				(property: any) => property.propertyBrand === PropertyBrand.AUDI,
-			);
-			setTrendProperties(filteredProduct);
+			setTrendProperties(data?.getProperties?.list);
 		},
 	});
 
@@ -151,10 +148,10 @@ const VehicleAudi = (props: TrendPropertiesProps) => {
 VehicleAudi.defaultProps = {
 	initialInput: {
 		page: 1,
-		// limit: 8,
+		limit: 8,
 		sort: 'createdAt',
-		direction: 'ASC',
-		search: {},
+		direction: 'DESC',
+		search: { brandList: 'AUDI' },
 	},
 };
 
