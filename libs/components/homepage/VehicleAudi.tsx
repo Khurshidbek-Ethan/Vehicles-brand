@@ -151,7 +151,7 @@ const VehicleAudi = (props: TrendPropertiesProps) => {
 VehicleAudi.defaultProps = {
 	initialInput: {
 		page: 1,
-		limit: 8,
+		// limit: 8,
 		sort: 'createdAt',
 		direction: 'ASC',
 		search: {},
