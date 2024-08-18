@@ -130,7 +130,7 @@ const VehicleGenessis = (props: TrendPropertiesProps) => {
 							>
 								{trendProperties.map((property: Property) => {
 									return (
-										<SwiperSlide key={property._id} className={'trend-property-slide'}>
+										<SwiperSlide key={property._id} className={'tren-property-slide'}>
 											<VehicleGenessisCard property={property} likePropertyHandler={likePropertyHandler} />
 										</SwiperSlide>
 									);
