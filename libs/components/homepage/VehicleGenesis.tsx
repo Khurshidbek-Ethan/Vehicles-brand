@@ -116,7 +116,7 @@ const VehicleGenessis = (props: TrendPropertiesProps) => {
 							</Box>
 						) : (
 							<Swiper
-								className={'trend-property-swiper'}
+								className={'tren-property-swiper'}
 								slidesPerView={'auto'}
 								spaceBetween={15}
 								modules={[Autoplay, Navigation, Pagination]}
