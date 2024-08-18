@@ -20,6 +20,7 @@ const VehicleBwmCard = (props: TrendPropertyCardProps) => {
 	const device = useDeviceDetect();
 	const router = useRouter();
 	const user = useReactiveVar(userVar);
+	console.log('property ------>', property);
 
 	/** HANDLERS **/
 	const pushDetailHandler = async (propertyId: string) => {
